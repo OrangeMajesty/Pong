@@ -1,15 +1,13 @@
-#include "mainwindow.h"
+#include "PongCore.h"
 
-MainWindow::MainWindow(QWidget *parent)
+PongCore::PongCore(QWidget* parent)
 {
     setSurfaceType(OpenGLSurface);
 
     QSurfaceFormat format;
-//    format.setDepthBufferSize(24);
-//    format.setMajorVersion(4);
-//    format.setMinorVersion(3);
-//    format.setSamples(4);
-    format.setProfile(QSurfaceFormat::CompatibilityProfile);
+      format.setRenderableType(QSurfaceFormat::OpenGL);
+      format.setProfile(QSurfaceFormat::CoreProfile);
+      //format.setVersion(3,3);
     format.setVersion(2,1);
     setFormat(format);
     create();
@@ -23,24 +21,25 @@ MainWindow::MainWindow(QWidget *parent)
     //func->initializeOpenGLFunctions();
 }
 
-MainWindow::~MainWindow()
+bool PongCore::test()
 {
+    return true;
 }
 
-void MainWindow::initializeGL()
-{
-
-}
-
-void MainWindow::resizeGL(int w, int h)
+void PongCore::initializeGL()
 {
 
 }
 
-void MainWindow::paintGL()
+void PongCore::resizeGL(int w, int h)
 {
 
-    glClearColor(1.7, 0.3f, 1.2f, 0.0f);
+}
+
+void PongCore::paintGL()
+{
+
+    glClearColor(1.0, 0.3f, 1.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     glBegin(GL_QUADS);
@@ -53,13 +52,12 @@ void MainWindow::paintGL()
     glFlush();
 }
 
-void MainWindow::resizeEvent(QResizeEvent *event)
+void PongCore::resizeEvent(QResizeEvent *event)
 {
 
 }
 
-void MainWindow::paintEvent(QPaintEvent *event)
+void PongCore::paintEvent(QPaintEvent *event)
 {
     paintGL();
 }
-

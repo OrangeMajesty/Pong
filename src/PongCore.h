@@ -1,16 +1,16 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
 #include <QOpenGLWindow>
 
-class MainWindow : public QOpenGLWindow
+class PongCore : public QOpenGLWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    PongCore(QWidget* parent = nullptr);
+    static bool test();
+
 
 protected:
     virtual void initializeGL();

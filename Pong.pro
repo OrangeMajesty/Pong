@@ -1,11 +1,9 @@
 TEMPLATE = subdirs
 
 SUBDIRS +=  \
-    src/src.pro \
-    unitTest/unitTest.pro
+    app \
+    src \
+    unitTest
 
-
-app.subdir = src/
-tests.subdir = unitTest/
-
-app.depends = src test
+app.depends = src
+unitTest.depends = src
