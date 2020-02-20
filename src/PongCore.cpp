@@ -12,11 +12,9 @@ PongCore::PongCore()
     setSurfaceType(OpenGLSurface);
 
     QSurfaceFormat format;
-      format.setRenderableType(QSurfaceFormat::OpenGL);
-      format.setProfile(QSurfaceFormat::CoreProfile);
-      format.setVersion(3,3);
-      //format.setSamples(3);
-    //format.setVersion(2,1);
+    format.setRenderableType(QSurfaceFormat::OpenGL);
+    format.setProfile(QSurfaceFormat::CoreProfile);
+    format.setVersion(3,3);
     setFormat(format);
     create();
 
@@ -53,11 +51,6 @@ void PongCore::initializeGL()
     m_shaderProgram.link();
     m_shaderProgram.bind();
 
-//    GLfloat positionData[] = {
-//         0.0f, -0.5f, 0.0f,
-//         0.5f, -0.5f, 0.0f,
-//         0.0f,  0.5f, 0.0f
-//    };
     GLfloat vertices[] = {
          0.5f,  0.5f, 0.0f,  // Верхний правый угол
          0.5f, -0.5f, 0.0f,  // Нижний правый угол
@@ -85,31 +78,12 @@ void PongCore::initializeGL()
     EBO.bind();
     EBO.allocate(indices, sizeof(indices));
 
-
-
-
-
-
-//    QOpenGLBuffer m_colorBuffer = QOpenGLBuffer();
-//    m_colorBuffer.create();
-//    m_colorBuffer.setUsagePattern(QOpenGLBuffer::StaticDraw);
-//    m_colorBuffer.bind();
-//    m_colorBuffer.allocate(positionData, sizeof(positionData) * 3 * sizeof(float));
-
-//    m_shaderProgram.enableAttributeArray("vertexColor");
-//    m_shaderProgram.setAttributeBuffer("vertexColor", GL_FLOAT, 0, 3);
-
-
-
     m_shaderProgram.enableAttributeArray(0);
     m_shaderProgram.setAttributeBuffer(0, GL_FLOAT, 0, 3);
 
     VBO.release();
     m_vao1->release();
     m_shaderProgram.release();
-
-
-
 
 }
 
@@ -125,16 +99,16 @@ void PongCore::paintGL()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     m_shaderProgram.bind();
-
     m_vao1->bind();
-    //m_positionBuffer.bind();
-    //openGLContext->glDrawElements(GL_TRIANGLES, 0, 3, (GLvoid*)0);
-    //glDrawArrays(GL_TRIANGLES, 1, 3);
-    //glDrawArrays(GL_TRIANGLES, 0, 3);
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-    m_vao1->release();
-    //m_positionBuffer.release();
 
+    m_shaderProgram.setUniformValue("color", QColor(255, 120, 20, 255));
+    glDrawArrays(GL_TRIANGLES, 1, 3);
+
+    m_shaderProgram.setUniformValue("color", QColor(255, 0, 20, 255));
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+    //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+    m_vao1->release();
 }
 
 void PongCore::resizeEvent(QResizeEvent *event)
