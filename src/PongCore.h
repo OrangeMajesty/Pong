@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QOpenGLShaderProgram>
+#include <QOpenGLVertexArrayObject>
 #include <QOpenGLWindow>
 
 class PongCore : public QOpenGLWindow
@@ -8,9 +10,7 @@ class PongCore : public QOpenGLWindow
     Q_OBJECT
 
 public:
-    PongCore(QWidget* parent = nullptr);
-    static bool test();
-
+    PongCore();
 
 protected:
     virtual void initializeGL();
@@ -22,5 +22,8 @@ protected:
 private:
     QOpenGLContext* context;
     QOpenGLFunctions* openGLContext;
+    QOpenGLShaderProgram m_shaderProgram;
+
+    QOpenGLVertexArrayObject* m_vao1;
 };
 #endif // MAINWINDOW_H

@@ -7,5 +7,5 @@ BOOST_AUTO_TEST_CASE( test )
 {
 
     BOOST_TEST( true /* test assertion */ );
-    BOOST_TEST(PongCore::test());
+
 }
