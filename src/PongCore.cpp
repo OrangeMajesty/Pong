@@ -36,6 +36,7 @@ PongCore::PongCore()
     foreach (const QByteArray &extension, extention) {
       qDebug() << "    " << extension;
     }
+
 }
 
 
@@ -52,20 +53,42 @@ void PongCore::initializeGL()
     m_shaderProgram.link();
     m_shaderProgram.bind();
 
-    GLfloat positionData[] = {
-        -0.5f, -0.5f, 0.0f,
-         0.5f, -0.5f, 0.0f,
-         0.0f,  0.5f, 0.0f
+//    GLfloat positionData[] = {
+//         0.0f, -0.5f, 0.0f,
+//         0.5f, -0.5f, 0.0f,
+//         0.0f,  0.5f, 0.0f
+//    };
+    GLfloat vertices[] = {
+         0.5f,  0.5f, 0.0f,  // Верхний правый угол
+         0.5f, -0.5f, 0.0f,  // Нижний правый угол
+        -0.5f, -0.5f, 0.0f,  // Нижний левый угол
+        -0.5f,  0.5f, 0.0f   // Верхний левый угол
+    };
+    GLuint indices[] = {  // Помните, что мы начинаем с 0!
+        0, 1, 3,   // Первый треугольник
+        1, 2, 3    // Второй треугольник
     };
 
-    QOpenGLBuffer m_positionBuffer = QOpenGLBuffer();
-    m_positionBuffer.create();
-    m_positionBuffer.setUsagePattern(QOpenGLBuffer::StaticDraw);
-    m_positionBuffer.bind();
-    m_positionBuffer.allocate(positionData, sizeof(positionData) * 3 * sizeof(float));
+    m_vao1 = new QOpenGLVertexArrayObject(this);
+    m_vao1->create();
+    m_vao1->bind();
 
-    m_shaderProgram.enableAttributeArray(0);
-    m_shaderProgram.setAttributeBuffer(0, GL_FLOAT, 0, 3);
+    QOpenGLBuffer VBO = QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
+    VBO.create();
+    VBO.setUsagePattern(QOpenGLBuffer::StaticDraw);
+    VBO.bind();
+    VBO.allocate(vertices, sizeof(vertices));
+
+    QOpenGLBuffer EBO = QOpenGLBuffer(QOpenGLBuffer::IndexBuffer);
+    EBO.create();
+    EBO.setUsagePattern(QOpenGLBuffer::StaticDraw);
+    EBO.bind();
+    EBO.allocate(indices, sizeof(indices));
+
+
+
+
+
 
 //    QOpenGLBuffer m_colorBuffer = QOpenGLBuffer();
 //    m_colorBuffer.create();
@@ -76,15 +99,15 @@ void PongCore::initializeGL()
 //    m_shaderProgram.enableAttributeArray("vertexColor");
 //    m_shaderProgram.setAttributeBuffer("vertexColor", GL_FLOAT, 0, 3);
 
-    m_vao1 = new QOpenGLVertexArrayObject(this);
-    m_vao1->create();
-    m_vao1->bind();
 
 
+    m_shaderProgram.enableAttributeArray(0);
+    m_shaderProgram.setAttributeBuffer(0, GL_FLOAT, 0, 3);
 
+    VBO.release();
     m_vao1->release();
-    m_positionBuffer.release();
     m_shaderProgram.release();
+
 
 
 
@@ -104,9 +127,13 @@ void PongCore::paintGL()
     m_shaderProgram.bind();
 
     m_vao1->bind();
+    //m_positionBuffer.bind();
     //openGLContext->glDrawElements(GL_TRIANGLES, 0, 3, (GLvoid*)0);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
-    //m_vao1->release();
+    //glDrawArrays(GL_TRIANGLES, 1, 3);
+    //glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+    m_vao1->release();
+    //m_positionBuffer.release();
 
 }
 
