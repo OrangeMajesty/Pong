@@ -25,9 +25,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    PLayer.cpp \
+    PLayerMenu.cpp \
+    PObject.cpp \
+    PPlayer.cpp \
     PongCore.cpp
 
 HEADERS += \
+    PLayer.h \
+    PLayerMenu.h \
+    PObject.h \
+    PPlayer.h \
     PongCore.h
 
 # Default rules for deployment.

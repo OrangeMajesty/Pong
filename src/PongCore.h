@@ -5,6 +5,9 @@
 #include <QOpenGLShaderProgram>
 #include <QOpenGLVertexArrayObject>
 #include <QOpenGLWindow>
+#include "PObject.h"
+#include "PLayer.h"
+#include "PLayerMenu.h"
 
 class PongCore : public QOpenGLWindow
 {
@@ -12,6 +15,8 @@ class PongCore : public QOpenGLWindow
 
 public:
     PongCore();
+    void drawElements(QList<PObject*> el);
+    void initLayout(PLayer* layout);
 
 protected:
     virtual void initializeGL();
@@ -25,6 +30,7 @@ private:
     QOpenGLFunctions* openGLContext;
     QOpenGLShaderProgram m_shaderProgram;
 
-    QOpenGLVertexArrayObject* m_vao1;
+    bool currentLayoutInit;
+    PLayer* currentLayout;
 };
 #endif // MAINWINDOW_H

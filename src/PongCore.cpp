@@ -6,6 +6,7 @@
 #include <GL/glu.h>
 #include <QOpenGLFunctions_3_3_Core>
 #include <algorithm>
+#include "PLayerMenu.h"
 
 PongCore::PongCore()
 {
@@ -35,6 +36,116 @@ PongCore::PongCore()
       qDebug() << "    " << extension;
     }
 
+    currentLayoutInit = false;
+    currentLayout = new PLayerMenu();
+}
+
+void PongCore::initLayout(PLayer *layout)
+{
+    //currentLayoutInit = false;
+    m_shaderProgram.bind();
+
+    auto elements = layout->getElements();
+    for(auto index = 0; index != elements.length(); index++) {
+        auto m_vao1 = new QOpenGLVertexArrayObject(this);
+        m_vao1->create();
+        elements.at(index)->setVAO(m_vao1);
+
+        m_vao1->bind();
+
+        auto shape = elements.at(index)->getShape();
+        auto fragment = elements.at(index)->getFragment();
+
+        GLfloat sharpe_[] = {
+            0.5f,  0.5f, 0.0f,  // Верхний правый угол
+                 0.5f, -0.5f, 0.0f,  // Нижний правый угол
+                -0.5f, -0.5f, 0.0f,  // Нижний левый угол
+                -0.5f,  0.5f, 0.0f   // Верхний левый угол
+        };
+
+        GLint fragment_[] = {
+            0, 1, 3,   // Первый треугольник
+                1, 2, 3    // Второй треугольник
+        };
+
+
+
+        QOpenGLBuffer VBO = QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
+        VBO.create();
+        VBO.setUsagePattern(QOpenGLBuffer::StaticDraw);
+        VBO.bind();
+        VBO.allocate(shape.constData(), sizeof(GLfloat)*shape.length());
+//        VBO.allocate(sharpe_, sizeof(sharpe_));
+
+
+        QOpenGLBuffer EBO = QOpenGLBuffer(QOpenGLBuffer::IndexBuffer);
+        if(!fragment.isEmpty()) {
+            EBO.create();
+            EBO.setUsagePattern(QOpenGLBuffer::StaticDraw);
+            EBO.bind();
+            EBO.allocate(fragment.constData(), sizeof(GLint)*fragment.length());
+//            EBO.allocate(fragment_, sizeof(fragment_));
+        }
+
+
+
+        m_shaderProgram.enableAttributeArray(0);
+        m_shaderProgram.setAttributeBuffer(0, GL_FLOAT, 0, 3);
+
+        VBO.release();
+        m_vao1->release();
+
+    }
+    currentLayoutInit = true;
+
+
+
+//    m_shaderProgram.release();
+
+    QVector3D background = layout->getColorBackground();
+
+    glClearColor(background.x(), background.y(), background.z(), 1.0f);
+}
+
+void PongCore::drawElements(QList<PObject*> el)
+{
+
+    m_shaderProgram.bind();
+    for(auto index = 0; index != el.length(); index++) {
+        auto VAO = el.at(index)->getVAO();
+        VAO->bind();
+
+        m_shaderProgram.setUniformValue("color", QColor(255, 120, 20, 255));
+
+//        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        if(!el.at(index)->getFragment().isEmpty()) {
+            glDrawElements(el.at(index)->getTypePrint(), 6, GL_UNSIGNED_INT, 0);
+        } else {
+            glDrawArrays(el.at(index)->getTypePrint(), 0, el.at(index)->getShape().length()/3);
+        }
+
+
+
+//        glEnableClientState(GL_VERTEX_ARRAY);
+        //glVertexPointer(3, GL_FLOAT, 0, sharpe);
+
+//        glPolygonMode(GL_FRONT_AND_BACK, GL_LINES);
+
+        //glDrawArrays(el.at(index)->getTypePrint(), 0, el.at(index)->getShape().length());
+        //glDrawArrays(el.at(index)->getTypePrint(), 0, el.at(index)->getShape().length()/3);
+        //glDrawArrays(GL_TRIANGLES, 0, 3);
+//        for(auto i = 0; i != 10; i++)
+            //glDrawArrays(GL_LINE_LOOP, 0, 4);
+//            glDisableClientState(GL_VERTEX_ARRAY);
+//        glDrawElements(GL_QUADS, 24, GL_UNSIGNED_INT, 0);
+        qDebug() << "el.at(index)->getShape().length()    " << el.at(index)->getShape().length()/3;
+
+        VAO->release();
+    }
+    m_shaderProgram.release();
+
+    //glDrawElements(GL_L, 4, GL_UNSIGNED_INT, 0);
 }
 
 
@@ -49,41 +160,6 @@ void PongCore::initializeGL()
     m_shaderProgram.addShader(fshader);
 
     m_shaderProgram.link();
-    m_shaderProgram.bind();
-
-    GLfloat vertices[] = {
-         0.5f,  0.5f, 0.0f,  // Верхний правый угол
-         0.5f, -0.5f, 0.0f,  // Нижний правый угол
-        -0.5f, -0.5f, 0.0f,  // Нижний левый угол
-        -0.5f,  0.5f, 0.0f   // Верхний левый угол
-    };
-    GLuint indices[] = {  // Помните, что мы начинаем с 0!
-        0, 1, 3,   // Первый треугольник
-        1, 2, 3    // Второй треугольник
-    };
-
-    m_vao1 = new QOpenGLVertexArrayObject(this);
-    m_vao1->create();
-    m_vao1->bind();
-
-    QOpenGLBuffer VBO = QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
-    VBO.create();
-    VBO.setUsagePattern(QOpenGLBuffer::StaticDraw);
-    VBO.bind();
-    VBO.allocate(vertices, sizeof(vertices));
-
-    QOpenGLBuffer EBO = QOpenGLBuffer(QOpenGLBuffer::IndexBuffer);
-    EBO.create();
-    EBO.setUsagePattern(QOpenGLBuffer::StaticDraw);
-    EBO.bind();
-    EBO.allocate(indices, sizeof(indices));
-
-    m_shaderProgram.enableAttributeArray(0);
-    m_shaderProgram.setAttributeBuffer(0, GL_FLOAT, 0, 3);
-
-    VBO.release();
-    m_vao1->release();
-    m_shaderProgram.release();
 
 }
 
@@ -94,21 +170,13 @@ void PongCore::resizeGL(int w, int h)
 
 void PongCore::paintGL()
 {
+    if(!currentLayoutInit)
+        initLayout(currentLayout);
 
-    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    m_shaderProgram.bind();
-    m_vao1->bind();
-
-    m_shaderProgram.setUniformValue("color", QColor(255, 120, 20, 255));
-    glDrawArrays(GL_TRIANGLES, 1, 3);
-
-    m_shaderProgram.setUniformValue("color", QColor(255, 0, 20, 255));
-    glDrawArrays(GL_TRIANGLES, 0, 3);
-    //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
-    m_vao1->release();
+    if(currentLayout && currentLayoutInit)
+        drawElements(currentLayout->getElements());
 }
 
 void PongCore::resizeEvent(QResizeEvent *event)
