@@ -4,7 +4,16 @@
 PLayerMenu::PLayerMenu()
 {
     QList<PObject*> arr;
-    arr.append(new PPlayer());
+
+    // Create 1 player
+    PPlayer* player1 = new PPlayer();
+    player1->setPosition(QVector3D(-0.95f, 0, 0));
+    arr.append(player1);
+
+    // Create 2 player
+    PPlayer* player2 = new PPlayer();
+    player2->setPosition(QVector3D(0.95f, 0, 0));
+    arr.append(player2);
 
     setElements(arr);
 

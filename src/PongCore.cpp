@@ -92,6 +92,9 @@ void PongCore::initLayout(PLayer *layout)
         m_shaderProgram.enableAttributeArray(0);
         m_shaderProgram.setAttributeBuffer(0, GL_FLOAT, 0, 3);
 
+//        m_shaderProgram.enableAttributeArray(1);
+//        m_shaderProgram.setAttributeBuffer(0, GL_FLOAT, 0, 3);
+
         VBO.release();
         m_vao1->release();
 
@@ -116,6 +119,8 @@ void PongCore::drawElements(QList<PObject*> el)
         VAO->bind();
 
         m_shaderProgram.setUniformValue("color", QColor(255, 120, 20, 255));
+        //m_shaderProgram.setUniformValue("offsetPosition", 0.4, 0, 0);
+        m_shaderProgram.setUniformValue("offsetPosition", el.at(index)->getPosition());
 
 //        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
@@ -139,7 +144,6 @@ void PongCore::drawElements(QList<PObject*> el)
             //glDrawArrays(GL_LINE_LOOP, 0, 4);
 //            glDisableClientState(GL_VERTEX_ARRAY);
 //        glDrawElements(GL_QUADS, 24, GL_UNSIGNED_INT, 0);
-        qDebug() << "el.at(index)->getShape().length()    " << el.at(index)->getShape().length()/3;
 
         VAO->release();
     }
