@@ -40,12 +40,12 @@ PongCore::PongCore()
     currentLayout = new PLayerMenu();
 }
 
-void PongCore::initLayout(PLayer *layout)
+void PongCore::initLayout(PLayer *layer)
 {
     //currentLayoutInit = false;
     m_shaderProgram.bind();
 
-    auto elements = layout->getElements();
+    auto elements = layer->getElements();
     for(auto index = 0; index != elements.length(); index++) {
         auto m_vao1 = new QOpenGLVertexArrayObject(this);
         m_vao1->create();
@@ -105,7 +105,7 @@ void PongCore::initLayout(PLayer *layout)
 
 //    m_shaderProgram.release();
 
-    QVector3D background = layout->getColorBackground();
+    QVector3D background = layer->getColorBackground();
 
     glClearColor(background.x(), background.y(), background.z(), 1.0f);
 }
@@ -118,7 +118,7 @@ void PongCore::drawElements(QList<PObject*> el)
         auto VAO = el.at(index)->getVAO();
         VAO->bind();
 
-        m_shaderProgram.setUniformValue("color", QColor(255, 120, 20, 255));
+        m_shaderProgram.setUniformValue("color", el.at(index)->getColor());
         //m_shaderProgram.setUniformValue("offsetPosition", 0.4, 0, 0);
         m_shaderProgram.setUniformValue("offsetPosition", el.at(index)->getPosition());
 
@@ -174,21 +174,34 @@ void PongCore::resizeGL(int w, int h)
 
 void PongCore::paintGL()
 {
-    if(!currentLayoutInit)
-        initLayout(currentLayout);
+    //while(1) {
+        if(!currentLayoutInit)
+            initLayout(currentLayout);
 
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    if(currentLayout && currentLayoutInit)
-        drawElements(currentLayout->getElements());
+        if(currentLayout && currentLayoutInit) {
+            drawElements(currentLayout->getElements());
+            currentLayout->drawTextArray(new QPainter(this));
+        }
+    //}
 }
 
 void PongCore::resizeEvent(QResizeEvent *event)
 {
-
+    resize(640, 480);
 }
 
 void PongCore::paintEvent(QPaintEvent *event)
 {
     paintGL();
+}
+
+void PongCore::keyPressEvent(QKeyEvent *e)
+{
+    if(currentLayoutInit) {
+        currentLayout->events->check(e);
+        //paintGL();
+    }
+//    e->KeyRelease;
 }

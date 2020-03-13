@@ -30,6 +30,15 @@ public:
     QVector<GLint> getFragment() const;
     void setFragment(const QVector<GLint> &value);
 
+    QColor getColor() const;
+    void setColor(const QColor &value);
+
+    bool getSelect() const;
+    void setSelect(bool value);
+
+    bool getAllowSelect() const;
+    void setAllowSelect(bool value);
+
 private:
     QVector3D position;
 
@@ -39,6 +48,11 @@ private:
     GLenum typePrint;
 
     QOpenGLVertexArrayObject *VAO;
+
+    QColor color;
+
+    bool select;
+    bool allowSelect;
 
     //signals:
 

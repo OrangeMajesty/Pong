@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/ttf">
+        <file>fonts/joystix_monospace.ttf</file>
+    </qresource>
+</RCC>

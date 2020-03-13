@@ -1,8 +1,10 @@
 #include "PLayer.h"
+#include "PEvents.h"
 
 PLayer::PLayer(QObject *parent) : QObject(parent)
 {
-
+//    events = new PEvents(config);
+    events = new PEvents();
 }
 
 void PLayer::setColorBackground(const QVector3D &value)
@@ -23,4 +25,10 @@ QList<PObject *> PLayer::getElements() const
 void PLayer::setElements(const QList<PObject *> &value)
 {
     elements = value;
+    events->setElements(value);
+}
+
+void PLayer::drawTextArray(QPainter*)
+{
+
 }

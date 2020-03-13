@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include "PObject.h"
+#include "PEvents.h"
 
 class PLayer : public QObject
 {
@@ -15,6 +16,10 @@ public:
 
     QList<PObject *> getElements() const;
     void setElements(const QList<PObject *> &value);
+
+    virtual void drawTextArray(QPainter*);
+
+    PEvents* events;
 
 private:
     QList<PObject *> elements; // Элементы которые будем отрисовывать на слое

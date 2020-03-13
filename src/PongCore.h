@@ -16,7 +16,8 @@ class PongCore : public QOpenGLWindow
 public:
     PongCore();
     void drawElements(QList<PObject*> el);
-    void initLayout(PLayer* layout);
+    void initLayout(PLayer* layer);
+    void checkEventLayout(PLayer *layer);
 
 protected:
     virtual void initializeGL();
@@ -24,6 +25,8 @@ protected:
     virtual void paintGL();
     void resizeEvent(QResizeEvent *event);
     void paintEvent(QPaintEvent *event);
+    void keyPressEvent(QKeyEvent *);
+
 
 private:
     QOpenGLContext* context;

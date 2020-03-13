@@ -9,6 +9,8 @@ class PLayerMenu : public PLayer
     Q_OBJECT
 public:
     PLayerMenu();
+
+    void drawTextArray(QPainter*);
 };
 
 #endif // PLAYERMENU_H

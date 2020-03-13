@@ -6,6 +6,15 @@ TEMPLATE = lib
 
 #CONFIG += staticlib
 
+# include freetype
+LIBS += -LD:\ProjectsC++\library\freetype-2.3.5-1-lib\lib #-lfreetype
+
+INCLUDEPATH += D:\ProjectsC++\library\freetype-2.3.5-1-lib\include
+DEPENDPATH += D:\ProjectsC++\library\freetype-2.3.5-1-lib\include
+
+INCLUDEPATH += D:\ProjectsC++\library\freetype-2.3.5-1-lib\include\freetype2
+DEPENDPATH += D:\ProjectsC++\library\freetype-2.3.5-1-lib\include\freetype2
+
 QT += opengl
 LIBS += -lglu32 -lopengl32
 
@@ -24,19 +33,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+
 SOURCES += \
+    Helper.cpp \
     PLayer.cpp \
     PLayerMenu.cpp \
+    PLayerScene_1.cpp \
     PObject.cpp \
     PPlayer.cpp \
-    PongCore.cpp
+    PongCore.cpp \
+    PEvents.cpp
 
 HEADERS += \
+    Helper.h \
     PLayer.h \
     PLayerMenu.h \
+    PLayerScene_1.h \
     PObject.h \
     PPlayer.h \
-    PongCore.h
+    PongCore.h \
+    PEvents.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -48,4 +64,5 @@ DISTFILES += \
     frag.frag
 
 RESOURCES += \
+    fonts.qrc \
     shader.qrc

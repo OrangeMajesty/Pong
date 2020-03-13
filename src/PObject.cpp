@@ -4,6 +4,9 @@ PObject::PObject(QObject *parent) : QObject(parent)
 {
     setPosition(QVector3D(0,0,0));
     setTypePrint(GL_TRIANGLES);
+    setColor(QColor(255, 120, 20, 255));
+    setAllowSelect(true);
+    setSelect(false);
 }
 
 //QVector3D PObject::rotate(QVector3D)
@@ -64,4 +67,39 @@ QVector<GLint> PObject::getFragment() const
 void PObject::setFragment(const QVector<GLint> &value)
 {
     fragment = value;
+}
+
+QColor PObject::getColor() const
+{
+    return color;
+}
+
+void PObject::setColor(const QColor &value)
+{
+    color = value;
+}
+
+bool PObject::getSelect() const
+{
+    return select;
+}
+
+void PObject::setSelect(bool value)
+{
+    select = value;
+    if(value)
+        setColor(QColor(255, 120, 20, 255));
+    else
+        setColor(QColor(150, 120, 20, 255));
+//    qDebug() << "change color" << getColor() ;
+}
+
+bool PObject::getAllowSelect() const
+{
+    return allowSelect;
+}
+
+void PObject::setAllowSelect(bool value)
+{
+    allowSelect = value;
 }
