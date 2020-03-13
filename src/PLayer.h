@@ -17,7 +17,7 @@ public:
     QList<PObject *> getElements() const;
     void setElements(const QList<PObject *> &value);
 
-    virtual void checkEvents(QKeyEvent *);
+    virtual void keyUpdate();
     virtual void drawTextArray(QPainter*);
 
     PEvents* events;

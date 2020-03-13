@@ -1,6 +1,6 @@
 #include "PObject.h"
 
-PObject::PObject(QObject *parent) : QObject(parent)
+PObject::PObject(QObject *parent) : PConfig(parent)
 {
     setPosition(QVector3D(0,0,0));
     setTypePrint(GL_TRIANGLES);

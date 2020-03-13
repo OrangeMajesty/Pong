@@ -26,6 +26,7 @@ protected:
     virtual void paintGL();
     void resizeEvent(QResizeEvent *event);
     void keyPressEvent(QKeyEvent *);
+    void keyReleaseEvent(QKeyEvent *);
 
 
 private:

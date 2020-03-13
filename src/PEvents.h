@@ -10,13 +10,17 @@ class PEvents : public QObject
 public:
     explicit PEvents(QObject *parent = nullptr);
 
-    virtual void checkEvents(QKeyEvent *);
+    virtual void keyUpdate();
+    void keyPress(QKeyEvent *);
+    void keyRelease(QKeyEvent *);
+    QMap<uint, bool> getKeyPressed() const;
 
     void setElements(const QList<PObject *> &value);
     QList<PObject *> getElements() const;
 
 private:
     QList<PObject *> elements;
+    QMap<uint, bool> keyPressed;
 
 signals:
 

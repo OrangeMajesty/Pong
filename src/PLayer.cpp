@@ -7,7 +7,7 @@ PLayer::PLayer(QObject *parent) : PEvents(parent)
     events = new PEvents();
 }
 
-void PLayer::checkEvents(QKeyEvent *e) {
+void PLayer::keyUpdate() {
 
 }
 

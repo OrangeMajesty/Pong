@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include "PObject.h"
+#include "PConfig.h"
 
 class PPlayer : public PObject
 {

@@ -88,38 +88,38 @@ void PLayerMenu::drawTextArray(QPainter* paint)
     paint->end();
 }
 
-void PLayerMenu::checkEvents(QKeyEvent *e)
+void PLayerMenu::keyUpdate()
 {
+        qDebug() << "getKeyPressed "<<getKeyPressed();
     auto elements = getElements();
+    auto keys = getKeyPressed();
+
     for(int index = 0; index != elements.length(); index++) {
-            auto el = elements.at(index);
-                if(el->getAllowSelect() && el->getSelect()) {
-                switch(e->key()) {
-                    case Qt::Key::Key_Up:{
-                        el->setSelect(false);
-                        PObject* selectElement = el;
+        auto el = elements.at(index);
+        if(el->getAllowSelect() && el->getSelect()) {
 
-                        if(0 <= index-1)
-                            selectElement = elements.at(index-1);
+            if(keys[Qt::Key::Key_Up]) {
+                el->setSelect(false);
+                PObject* selectElement = el;
 
-                        selectElement->setSelect(true);
-                    } break;
-                    case Qt::Key::Key_Down: {
-                        el->setSelect(false);
-                        PObject* selectElement = el;
+                if(0 <= index-1)
+                    selectElement = elements.at(index-1);
 
-                        if(elements.length() > index+1)
-                            selectElement = elements.at(index+1);
+                selectElement->setSelect(true);
+            } else if(keys[Qt::Key::Key_Down]) {
+                el->setSelect(false);
+                PObject* selectElement = el;
 
-                        selectElement->setSelect(true);
-                    } break;
-                    case Qt::Key_Space:
-                        qDebug() << "Key_Space";
-                        emit el->clicked(new PLayerScene_1());
-                     break;
-                }
+                if(elements.length() > index+1)
+                    selectElement = elements.at(index+1);
+
+                selectElement->setSelect(true);
+            } else if(keys[Qt::Key::Key_Space]) {
+                emit el->clicked(new PLayerScene_1());
             }
+
         }
+    }
 }
 
 void PLayerMenu::changeLayer()

@@ -11,7 +11,7 @@ public:
     PLayerMenu(QObject *parent = nullptr);
 
     void drawTextArray(QPainter*) override;
-    void checkEvents(QKeyEvent *) override;
+    void keyUpdate() override;
 
 public slots:
     void changeLayer();

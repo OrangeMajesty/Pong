@@ -197,6 +197,8 @@ void PongCore::paintGL()
     if(currentLayout && currentLayoutInit) {
         drawElements(currentLayout->getElements());
         currentLayout->drawTextArray(new QPainter(this));
+        if(currentLayoutInit)
+            currentLayout->keyUpdate();
     }
 }
 
@@ -213,7 +215,13 @@ void PongCore::paintEvent(QPaintEvent *event)
 void PongCore::keyPressEvent(QKeyEvent *e)
 {
     if(currentLayoutInit)
-        currentLayout->checkEvents(e);
+        currentLayout->keyPress(e);
+}
+
+void PongCore::keyReleaseEvent(QKeyEvent *e)
+{
+    if(currentLayoutInit)
+        currentLayout->keyRelease(e);
 }
 
 void PongCore::changeLayout(QObject *layer)

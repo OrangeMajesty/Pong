@@ -4,8 +4,9 @@
 #include <QObject>
 #include <QVector3D>
 #include <QtOpenGL>
+#include "pconfig.h"
 
-class PObject : public QObject
+class PObject : public PConfig
 {
     Q_OBJECT
 public:
