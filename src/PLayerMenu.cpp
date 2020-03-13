@@ -1,8 +1,10 @@
 #include "PLayerMenu.h"
 #include "PPlayer.h"
 #include <QPainter>
+#include "PLayerScene_1.h"
 
-PLayerMenu::PLayerMenu()
+
+PLayerMenu::PLayerMenu(QObject *parent)
 {
     QList<PObject*> arr;
 
@@ -33,6 +35,10 @@ PLayerMenu::PLayerMenu()
 //    item1->setColor(QColor(150, 120, 20, 255));
     item1->setSelect(true);
     arr.append(item1);
+
+    connect(item1, SIGNAL(clicked(QObject*)), parent, SLOT(changeLayout(QObject *)));
+    //connect(item1, SIGNAL(clicked()), parent, SLOT(initLayout(new PLayerScence_1(parent))));
+    connect(item1, SIGNAL(clicked(QObject*)), this, SLOT(changeLayer()));
 
 
 //    PObject* menu2 = new PObject();
@@ -80,4 +86,43 @@ void PLayerMenu::drawTextArray(QPainter* paint)
     paint->drawText(165, 175, "Exit");
 
     paint->end();
+}
+
+void PLayerMenu::checkEvents(QKeyEvent *e)
+{
+    auto elements = getElements();
+    for(int index = 0; index != elements.length(); index++) {
+            auto el = elements.at(index);
+                if(el->getAllowSelect() && el->getSelect()) {
+                switch(e->key()) {
+                    case Qt::Key::Key_Up:{
+                        el->setSelect(false);
+                        PObject* selectElement = el;
+
+                        if(0 <= index-1)
+                            selectElement = elements.at(index-1);
+
+                        selectElement->setSelect(true);
+                    } break;
+                    case Qt::Key::Key_Down: {
+                        el->setSelect(false);
+                        PObject* selectElement = el;
+
+                        if(elements.length() > index+1)
+                            selectElement = elements.at(index+1);
+
+                        selectElement->setSelect(true);
+                    } break;
+                    case Qt::Key_Space:
+                        qDebug() << "Key_Space";
+                        emit el->clicked(new PLayerScene_1());
+                     break;
+                }
+            }
+        }
+}
+
+void PLayerMenu::changeLayer()
+{
+    qDebug() << "changeLayer";
 }

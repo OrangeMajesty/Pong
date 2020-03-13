@@ -1,10 +1,14 @@
 #include "PLayer.h"
 #include "PEvents.h"
 
-PLayer::PLayer(QObject *parent) : QObject(parent)
+PLayer::PLayer(QObject *parent) : PEvents(parent)
 {
 //    events = new PEvents(config);
     events = new PEvents();
+}
+
+void PLayer::checkEvents(QKeyEvent *e) {
+
 }
 
 void PLayer::setColorBackground(const QVector3D &value)

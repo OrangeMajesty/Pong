@@ -10,9 +10,10 @@ class PEvents : public QObject
 public:
     explicit PEvents(QObject *parent = nullptr);
 
-    void check(QKeyEvent *);
+    virtual void checkEvents(QKeyEvent *);
 
     void setElements(const QList<PObject *> &value);
+    QList<PObject *> getElements() const;
 
 private:
     QList<PObject *> elements;

@@ -37,11 +37,20 @@ PongCore::PongCore()
     }
 
     currentLayoutInit = false;
-    currentLayout = new PLayerMenu();
+    currentLayout = new PLayerMenu(this);
+
+
 }
 
-void PongCore::initLayout(PLayer *layer)
+void PongCore::initLayout(PLayer *layer_)
 {
+    qDebug() << "typeid(*layer_).name()"<<typeid(*layer_).name();
+//    qDebug() << "typeid(PLayer).name()"<<typeid(PLayer).name();
+//    if(typeid(*layer_).name() != typeid(PLayer).name()) return;
+    // To Do проверить возможность превидения типа
+    PLayer* layer = (PLayer*)layer_;
+
+    qDebug() << "initLayout";
     //currentLayoutInit = false;
     m_shaderProgram.bind();
 
@@ -56,17 +65,17 @@ void PongCore::initLayout(PLayer *layer)
         auto shape = elements.at(index)->getShape();
         auto fragment = elements.at(index)->getFragment();
 
-        GLfloat sharpe_[] = {
-            0.5f,  0.5f, 0.0f,  // Верхний правый угол
-                 0.5f, -0.5f, 0.0f,  // Нижний правый угол
-                -0.5f, -0.5f, 0.0f,  // Нижний левый угол
-                -0.5f,  0.5f, 0.0f   // Верхний левый угол
-        };
+//        GLfloat sharpe_[] = {
+//            0.5f,  0.5f, 0.0f,  // Верхний правый угол
+//                 0.5f, -0.5f, 0.0f,  // Нижний правый угол
+//                -0.5f, -0.5f, 0.0f,  // Нижний левый угол
+//                -0.5f,  0.5f, 0.0f   // Верхний левый угол
+//        };
 
-        GLint fragment_[] = {
-            0, 1, 3,   // Первый треугольник
-                1, 2, 3    // Второй треугольник
-        };
+//        GLint fragment_[] = {
+//            0, 1, 3,   // Первый треугольник
+//                1, 2, 3    // Второй треугольник
+//        };
 
 
 
@@ -109,6 +118,7 @@ void PongCore::initLayout(PLayer *layer)
 
     glClearColor(background.x(), background.y(), background.z(), 1.0f);
 }
+
 
 void PongCore::drawElements(QList<PObject*> el)
 {
@@ -165,6 +175,11 @@ void PongCore::initializeGL()
 
     m_shaderProgram.link();
 
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(updateScreen()));
+    timer->start(10);
+    timer->start();
+
 }
 
 void PongCore::resizeGL(int w, int h)
@@ -174,17 +189,15 @@ void PongCore::resizeGL(int w, int h)
 
 void PongCore::paintGL()
 {
-    //while(1) {
-        if(!currentLayoutInit)
-            initLayout(currentLayout);
+    if(!currentLayoutInit)
+        initLayout(currentLayout);
 
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        if(currentLayout && currentLayoutInit) {
-            drawElements(currentLayout->getElements());
-            currentLayout->drawTextArray(new QPainter(this));
-        }
-    //}
+    if(currentLayout && currentLayoutInit) {
+        drawElements(currentLayout->getElements());
+        currentLayout->drawTextArray(new QPainter(this));
+    }
 }
 
 void PongCore::resizeEvent(QResizeEvent *event)
@@ -199,9 +212,17 @@ void PongCore::paintEvent(QPaintEvent *event)
 
 void PongCore::keyPressEvent(QKeyEvent *e)
 {
-    if(currentLayoutInit) {
-        currentLayout->events->check(e);
-        //paintGL();
-    }
-//    e->KeyRelease;
+    if(currentLayoutInit)
+        currentLayout->checkEvents(e);
+}
+
+void PongCore::changeLayout(QObject *layer)
+{
+    currentLayoutInit = false;
+    currentLayout = (PLayer*)layer;
+}
+
+void PongCore::updateScreen()
+{
+    requestUpdate();
 }

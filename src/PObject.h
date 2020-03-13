@@ -54,7 +54,8 @@ private:
     bool select;
     bool allowSelect;
 
-    //signals:
+signals:
+    void clicked(QObject*);
 
 public slots:
 //    void click();

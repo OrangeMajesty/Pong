@@ -5,7 +5,7 @@
 #include "PObject.h"
 #include "PEvents.h"
 
-class PLayer : public QObject
+class PLayer : public PEvents
 {
     Q_OBJECT
 public:
@@ -17,6 +17,7 @@ public:
     QList<PObject *> getElements() const;
     void setElements(const QList<PObject *> &value);
 
+    virtual void checkEvents(QKeyEvent *);
     virtual void drawTextArray(QPainter*);
 
     PEvents* events;

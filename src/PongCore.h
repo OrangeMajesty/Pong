@@ -16,15 +16,15 @@ class PongCore : public QOpenGLWindow
 public:
     PongCore();
     void drawElements(QList<PObject*> el);
-    void initLayout(PLayer* layer);
+    void paintEvent(QPaintEvent *event);
     void checkEventLayout(PLayer *layer);
+    void initLayout(PLayer* layer);
 
 protected:
     virtual void initializeGL();
     virtual void resizeGL(int w, int h);
     virtual void paintGL();
     void resizeEvent(QResizeEvent *event);
-    void paintEvent(QPaintEvent *event);
     void keyPressEvent(QKeyEvent *);
 
 
@@ -34,6 +34,12 @@ private:
     QOpenGLShaderProgram m_shaderProgram;
 
     bool currentLayoutInit;
+
     PLayer* currentLayout;
+
+public slots:
+    void changeLayout(QObject* layer);
+    void updateScreen();
+
 };
 #endif // MAINWINDOW_H

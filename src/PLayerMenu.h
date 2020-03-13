@@ -8,9 +8,13 @@ class PLayerMenu : public PLayer
 {
     Q_OBJECT
 public:
-    PLayerMenu();
+    PLayerMenu(QObject *parent = nullptr);
 
-    void drawTextArray(QPainter*);
+    void drawTextArray(QPainter*) override;
+    void checkEvents(QKeyEvent *) override;
+
+public slots:
+    void changeLayer();
 };
 
 #endif // PLAYERMENU_H

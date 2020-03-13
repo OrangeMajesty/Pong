@@ -8,7 +8,8 @@ class PLayerScene_1 : public PLayer
 {
     Q_OBJECT
 public:
-    PLayerScene_1();
+    PLayerScene_1(QObject *parent = nullptr);
+    void checkEvents(QKeyEvent *) override;
 };
 
 #endif // PLAYERSCENE_1_H
