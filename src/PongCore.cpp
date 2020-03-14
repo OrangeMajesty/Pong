@@ -134,8 +134,9 @@ void PongCore::drawElements(QList<PObject*> el)
 
 //        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
+
         if(!el.at(index)->getFragment().isEmpty()) {
-            glDrawElements(el.at(index)->getTypePrint(), 6, GL_UNSIGNED_INT, 0);
+            glDrawElements(el.at(index)->getTypePrint(), el.at(index)->getFragment().length(), GL_UNSIGNED_INT, 0);
         } else {
             glDrawArrays(el.at(index)->getTypePrint(), 0, el.at(index)->getShape().length()/3);
         }
