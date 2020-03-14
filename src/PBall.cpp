@@ -6,15 +6,15 @@ PBall::PBall()
     QVector<GLfloat> sharpe = {
         0.0f, 0.0f, 1.0f, // O
 
-        0.0f, 0.1f, 1.0f,
-        -0.075f, 0.075f, 1.0f,
-        -0.1f, 0.0f, 1.0f,
-        -0.075f, -0.075f, 1.0f,
+        0.0f, 0.045f, 1.0f,
+        -0.0335f, 0.0335f, 1.0f,
+        -0.045f, 0.0f, 1.0f,
+        -0.0335f, -0.0335f, 1.0f,
 
-        0.0f, -0.1f, 1.0f,
-        0.075f, -0.075f, 1.0f,
-        0.1f, 0.0f, 1.0f,
-        0.075f, 0.075f, 1.0f,
+        0.0f, -0.045f, 1.0f,
+        0.0335f, -0.0335f, 1.0f,
+        0.045f, 0.0f, 1.0f,
+        0.0335f, 0.0335f, 1.0f,
     };
 
     QVector<GLint> fragment = {
@@ -35,3 +35,8 @@ PBall::PBall()
 
     setTypePrint(GL_TRIANGLES);
 }
+
+//void PBall::updatePosition()
+//{
+
+//}

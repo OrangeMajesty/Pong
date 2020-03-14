@@ -7,6 +7,9 @@ PObject::PObject(QObject *parent) : PConfig(parent)
     setColor(QColor(255, 120, 20, 255));
     setAllowSelect(true);
     setSelect(false);
+
+    setVector(QVector3D(0,0,0));
+    setSpeed(0);
 }
 
 //QVector3D PObject::rotate(QVector3D)
@@ -102,4 +105,48 @@ bool PObject::getAllowSelect() const
 void PObject::setAllowSelect(bool value)
 {
     allowSelect = value;
+}
+
+QVector3D PObject::getVector() const
+{
+    return vector;
+}
+
+void PObject::setVector(const QVector3D &value)
+{
+    vector = value;
+}
+
+float PObject::getSpeed() const
+{
+    return speed;
+}
+
+void PObject::setSpeed(float value)
+{
+    speed = value;
+}
+
+void PObject::updatePosition()
+{
+    auto pos = getPosition();
+    auto speed = getSpeed();
+    auto vec = getVector();
+
+
+    if(vec != QVector3D(0,0,0) && speed != 0) {
+        if(pos.x() >= 1.0f || pos.x() <= -1.0f) vec.setX(vec.x() * -1.0f);
+        if(pos.y() >= 1.0f || pos.x() <= -1.0f) vec.setY(vec.y() * -1.0f);
+
+        setVector(vec);
+        setPosition((vec*speed)+pos);
+    } else {
+        if(pos.x() > 1.0f ) pos.setX(pos.x() - (1.0f - pos.x()) * -1);
+        if(pos.x() < -1.0f ) pos.setX(pos.x() - (-1.0f - pos.x()) * -1);
+
+        if(pos.y() > 1.0f ) pos.setY(pos.y() - (1.0f - pos.y()) * -1);
+        if(pos.y() < -1.0f ) pos.setY(pos.y() - (-1.0f - pos.y()) * -1);
+
+        setPosition(pos);
+    }
 }

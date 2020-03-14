@@ -40,6 +40,15 @@ public:
     bool getAllowSelect() const;
     void setAllowSelect(bool value);
 
+    QVector3D getVector() const;
+    void setVector(const QVector3D &value);
+
+    float getSpeed() const;
+    void setSpeed(float value);
+
+    // Обновляет позицию с учетом вектора и скорости
+    void updatePosition();
+
 private:
     QVector3D position;
 
@@ -49,6 +58,9 @@ private:
     GLenum typePrint;
 
     QOpenGLVertexArrayObject *VAO;
+
+    QVector3D vector;
+    float speed;
 
     QColor color;
 

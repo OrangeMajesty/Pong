@@ -38,6 +38,9 @@ PLayerScene_1::PLayerScene_1(QObject *parent)
     PBall* ball = new PBall();
     ball->setPosition(QVector3D(0,0,0));
     ball->setColor(QColor(255, 120, 20, 255));
+    ball->setSpeed(0.03);
+    //ball->setVector(QVector3D((rand() % 2 - 1)*0.1, (rand() % 2 - 1)*0.1, 0));
+    ball->setVector(QVector3D(-0.1, 0.1, 0));
     arr.append(ball);
 
     setElements(arr);

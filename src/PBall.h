@@ -8,6 +8,8 @@ class PBall : public PObject
     Q_OBJECT
 public:
     PBall();
+
+//    void updatePosition() override;
 };
 
 #endif // PBALL_H

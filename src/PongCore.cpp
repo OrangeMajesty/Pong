@@ -7,6 +7,7 @@
 #include <QOpenGLFunctions_3_3_Core>
 #include <algorithm>
 #include "PLayerMenu.h"
+#include "PLayerScene_1.h"
 
 PongCore::PongCore()
 {
@@ -37,7 +38,8 @@ PongCore::PongCore()
     }
 
     currentLayoutInit = false;
-    currentLayout = new PLayerMenu(this);
+    //currentLayout = new PLayerMenu(this);
+    currentLayout = new PLayerScene_1(this);
 
 
 }
@@ -141,6 +143,7 @@ void PongCore::drawElements(QList<PObject*> el)
             glDrawArrays(el.at(index)->getTypePrint(), 0, el.at(index)->getShape().length()/3);
         }
 
+        el.at(index)->updatePosition();
 
 
 //        glEnableClientState(GL_VERTEX_ARRAY);

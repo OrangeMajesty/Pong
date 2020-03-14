@@ -22,3 +22,8 @@ PPlayer::PPlayer()
 
     setTypePrint(GL_TRIANGLES);
 }
+
+//void PPlayer::updatePosition()
+//{
+
+//}
