@@ -36,6 +36,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     Helper.cpp \
+    PBall.cpp \
     PConfig.cpp \
     PLayer.cpp \
     PLayerMenu.cpp \
@@ -47,6 +48,7 @@ SOURCES += \
 
 HEADERS += \
     Helper.h \
+    PBall.h \
     PConfig.h \
     PLayer.h \
     PLayerMenu.h \

@@ -1,6 +1,7 @@
 #include "PLayerScene_1.h"
 #include "PLayer.h"
 #include "PPlayer.h"
+#include "PBall.h"
 
 #define speed 0.03
 
@@ -14,8 +15,9 @@ PLayerScene_1::PLayerScene_1(QObject *parent)
     player1->setColor(QColor(255, 120, 20, 255));
 
     QMap<PConfig::key, int> keys_p1;
-    keys_p1[PConfig::key::Up] = Qt::Key::Key_Up;
-    keys_p1[PConfig::key::Down] = Qt::Key::Key_Down;
+    keys_p1[PConfig::key::Up] = Qt::Key::Key_W;
+    keys_p1[PConfig::key::Down] = Qt::Key::Key_S;
+
     player1->setKeysControl(keys_p1);
 
     arr.append(player1);
@@ -26,11 +28,17 @@ PLayerScene_1::PLayerScene_1(QObject *parent)
     player2->setColor(QColor(255, 120, 20, 255));
 
     QMap<PConfig::key, int> keys_p2;
-    keys_p2[PConfig::key::Up] = Qt::Key::Key_W;
-    keys_p2[PConfig::key::Down] = Qt::Key::Key_S;
+    keys_p2[PConfig::key::Up] = Qt::Key::Key_Up;
+    keys_p2[PConfig::key::Down] = Qt::Key::Key_Down;
     player2->setKeysControl(keys_p2);
 
     arr.append(player2);
+
+    // Create ball
+    PBall* ball = new PBall();
+    ball->setPosition(QVector3D(0,0,0));
+    ball->setColor(QColor(255, 120, 20, 255));
+    arr.append(ball);
 
     setElements(arr);
 
