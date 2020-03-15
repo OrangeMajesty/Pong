@@ -4,7 +4,7 @@
 PLayer::PLayer(QObject *parent) : PEvents(parent)
 {
 //    events = new PEvents(config);
-    events = new PEvents();
+//    events = new PEvents();
 }
 
 void PLayer::keyUpdate() {
@@ -29,7 +29,7 @@ QList<PObject *> PLayer::getElements() const
 void PLayer::setElements(const QList<PObject *> &value)
 {
     elements = value;
-    events->setElements(value);
+//    events->setElements(value);
 }
 
 void PLayer::drawTextArray(QPainter*)

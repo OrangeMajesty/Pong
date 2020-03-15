@@ -3,6 +3,7 @@
 
 PPlayer::PPlayer()
 {
+    objectName = "Player";
 
     QVector<GLfloat> sharpe = {
         -0.01f, -0.2f, 1.0f,
@@ -21,6 +22,11 @@ PPlayer::PPlayer()
     setFragment(fragment);
 
     setTypePrint(GL_TRIANGLES);
+}
+
+unsigned int PPlayer::getScore() const
+{
+    return score;
 }
 
 //void PPlayer::updatePosition()

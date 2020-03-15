@@ -37,8 +37,6 @@ PLayerMenu::PLayerMenu(QObject *parent)
     arr.append(item1);
 
     connect(item1, SIGNAL(clicked(QObject*)), parent, SLOT(changeLayout(QObject *)));
-    //connect(item1, SIGNAL(clicked()), parent, SLOT(initLayout(new PLayerScence_1(parent))));
-    connect(item1, SIGNAL(clicked(QObject*)), this, SLOT(changeLayer()));
 
 
 //    PObject* menu2 = new PObject();
@@ -50,11 +48,8 @@ PLayerMenu::PLayerMenu(QObject *parent)
 
     PObject* item3 = new PObject();
     item3->setShape(sharpe);
-//    menu3->setFragment(fragment);
     item3->setTypePrint(GL_LINE_LOOP);
     item3->setPosition(QVector3D(0, -0.3f, 0));
-//    item3->setColor(QColor(255, 120, 20, 255));
-    //item3->setSelect(false);
     arr.append(item3);
 
 
@@ -90,7 +85,6 @@ void PLayerMenu::drawTextArray(QPainter* paint)
 
 void PLayerMenu::keyUpdate()
 {
-        qDebug() << "getKeyPressed "<<getKeyPressed();
     auto elements = getElements();
     auto keys = getKeyPressed();
 
@@ -120,9 +114,4 @@ void PLayerMenu::keyUpdate()
 
         }
     }
-}
-
-void PLayerMenu::changeLayer()
-{
-    qDebug() << "changeLayer";
 }

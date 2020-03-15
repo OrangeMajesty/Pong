@@ -9,6 +9,8 @@ class PLayerScene_1 : public PLayer
     Q_OBJECT
 public:
     PLayerScene_1(QObject *parent = nullptr);
+
+    void drawTextArray(QPainter*) override;
     void keyUpdate() override;
 };
 

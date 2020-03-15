@@ -2,12 +2,26 @@
 #include "PLayer.h"
 #include "PPlayer.h"
 #include "PBall.h"
+#include "PObject.h"
 
 #define speed 0.03
 
 PLayerScene_1::PLayerScene_1(QObject *parent)
 {
     QList<PObject*> arr;
+
+    // Create game objects
+    PObject* lineCenter = new PObject();
+    lineCenter->setSelect(false);
+    lineCenter->setTypePrint(GL_LINES);
+
+    QVector<GLfloat> sharpe = {
+        0.0f, 1.0f, 1.0f,
+        0.0f, -1.0f, 1.0f,
+    };
+
+    lineCenter->setShape(sharpe);
+    arr.append(lineCenter);
 
     // Create 1 player
     PPlayer* player1 = new PPlayer();
@@ -17,7 +31,6 @@ PLayerScene_1::PLayerScene_1(QObject *parent)
     QMap<PConfig::key, int> keys_p1;
     keys_p1[PConfig::key::Up] = Qt::Key::Key_W;
     keys_p1[PConfig::key::Down] = Qt::Key::Key_S;
-
     player1->setKeysControl(keys_p1);
 
     arr.append(player1);
@@ -46,6 +59,32 @@ PLayerScene_1::PLayerScene_1(QObject *parent)
     setElements(arr);
 
     setColorBackground(QVector3D(0.2f, 0.3f, 0.3f));
+}
+
+void PLayerScene_1::drawTextArray(QPainter* paint)
+{
+    auto els = getElements();
+    paint->scale(3, 3);
+    paint->setPen(Qt::white);
+
+    QList<QPointF> posScore = {
+        QPointF(190, 20),
+        QPointF(15, 20)
+    };
+
+
+    // Score players
+    for(auto index = 0, i_player = 0; index != els.length(); index++) {
+        if(els.at(index)->getObjectName() == "Player") {
+            if(posScore.length() >= i_player) {
+                paint->drawText(posScore.at(i_player), QString::number(((PPlayer*)els.at(index))->getScore()));
+                i_player++;
+            }
+
+        }
+    }
+
+    paint->end();
 }
 
 void PLayerScene_1::keyUpdate() {

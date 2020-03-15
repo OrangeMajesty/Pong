@@ -150,3 +150,8 @@ void PObject::updatePosition()
         setPosition(pos);
     }
 }
+
+QString PObject::getObjectName() const
+{
+    return objectName;
+}

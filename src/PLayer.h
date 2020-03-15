@@ -20,8 +20,6 @@ public:
     virtual void keyUpdate();
     virtual void drawTextArray(QPainter*);
 
-    PEvents* events;
-
 private:
     QList<PObject *> elements; // Элементы которые будем отрисовывать на слое
     QVector3D colorBackground;

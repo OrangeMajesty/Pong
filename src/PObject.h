@@ -49,6 +49,11 @@ public:
     // Обновляет позицию с учетом вектора и скорости
     void updatePosition();
 
+    QString getObjectName() const;
+
+protected:
+    QString objectName;
+
 private:
     QVector3D position;
 
@@ -66,6 +71,8 @@ private:
 
     bool select;
     bool allowSelect;
+
+
 
 signals:
     void clicked(QObject*);

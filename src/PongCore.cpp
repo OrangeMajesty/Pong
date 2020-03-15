@@ -46,8 +46,9 @@ PongCore::PongCore()
 
 void PongCore::initLayout(PLayer *layer_)
 {
-    qDebug() << "typeid(*layer_).name()"<<typeid(*layer_).name();
+//    qDebug() << "typeid(*layer_).name()"<<typeid(*layer_).name();
 //    qDebug() << "typeid(PLayer).name()"<<typeid(PLayer).name();
+
 //    if(typeid(*layer_).name() != typeid(PLayer).name()) return;
     // To Do проверить возможность превидения типа
     PLayer* layer = (PLayer*)layer_;

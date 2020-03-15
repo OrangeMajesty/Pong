@@ -12,6 +12,10 @@ public:
     PPlayer();
 
 //    void updatePosition() override;
+    unsigned int getScore() const;
+
+private:
+    unsigned int score;
 };
 
 #endif // PPLAYER_H
