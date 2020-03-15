@@ -136,7 +136,7 @@ void PObject::updatePosition()
 
     if(vec != QVector3D(0,0,0) && speed != 0) {
         if(pos.x() >= 1.0f || pos.x() <= -1.0f) vec.setX(vec.x() * -1.0f);
-        if(pos.y() >= 1.0f || pos.x() <= -1.0f) vec.setY(vec.y() * -1.0f);
+        if(pos.y() >= 1.0f || pos.y() <= -1.0f) vec.setY(vec.y() * -1.0f);
 
         setVector(vec);
         setPosition((vec*speed)+pos);
