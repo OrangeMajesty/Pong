@@ -8,6 +8,7 @@
 
 PLayerScene_1::PLayerScene_1(QObject *parent)
 {
+
     QList<PObject*> arr;
 
     // Create game objects
@@ -27,6 +28,8 @@ PLayerScene_1::PLayerScene_1(QObject *parent)
     PPlayer* player1 = new PPlayer();
     player1->setPosition(QVector3D(-0.95f, 0, 0));
     player1->setColor(QColor(255, 120, 20, 255));
+
+
 
     QMap<PConfig::key, int> keys_p1;
     keys_p1[PConfig::key::Up] = Qt::Key::Key_W;
@@ -54,10 +57,12 @@ PLayerScene_1::PLayerScene_1(QObject *parent)
     ball->setSpeed(0.06);
     //ball->setVector(QVector3D((rand() % 2 - 1)*0.1, (rand() % 2 - 1)*0.1, 0));
     ball->setVector(QVector3D(0.1, -0.243853, 0));
+    connect((PObject*)ball, SIGNAL(goingAbroad(QVector3D)), this, SLOT(resetLayer(QVector3D)));
     arr.append(ball);
 
     setElements(arr);
 
+    //layerReset();
     setColorBackground(QVector3D(0.2f, 0.3f, 0.3f));
 }
 
@@ -108,4 +113,48 @@ void PLayerScene_1::keyUpdate() {
         }
 
     }
+}
+
+void PLayerScene_1::layerReset()
+{
+    auto elements = getElements();
+
+    for(int index = 0; index != elements.length(); index++) {
+        auto el = elements.at(index);
+
+        if("Ball" == el->getObjectName()) {
+//            auto oldSpeed = el->getSpeed();
+            el->setPosition(QVector3D(0,0,0));
+//            el->setSpeed(oldSpeed+0.005);
+            break;
+        }
+
+    }
+
+    setElements(elements);
+
+}
+
+void PLayerScene_1::resetLayer(QVector3D a)
+{
+    auto elements = getElements();
+    int offsetPlayer = 0;
+
+    for(int index = 0; index != elements.length(); index++) {
+        auto el = elements.at(index);
+
+        if("Player" == el->getObjectName()) {
+            if(a.x() >= 1.0f && offsetPlayer == 1)
+                ((PPlayer*)el)->setScore(  ((PPlayer*)el)->getScore() + 1);
+
+            if(a.x() <= -1.0f && offsetPlayer == 0)
+                ((PPlayer*)el)->setScore(  ((PPlayer*)el)->getScore() + 1);
+
+            offsetPlayer++;
+        }
+
+    }
+
+    if(a.x() >= 1.0f || a.x() <= -1.0f)
+        layerReset();
 }

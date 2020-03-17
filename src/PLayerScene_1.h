@@ -12,6 +12,11 @@ public:
 
     void drawTextArray(QPainter*) override;
     void keyUpdate() override;
+
+    void layerReset() override;
+
+public slots:
+    void resetLayer(QVector3D);
 };
 
 #endif // PLAYERSCENE_1_H

@@ -51,6 +51,8 @@ public:
 
     QString getObjectName() const;
 
+    bool collisionEffect;
+
 protected:
     QString objectName;
 
@@ -72,13 +74,14 @@ private:
     bool select;
     bool allowSelect;
 
+private slots:
+    void collisionHandler();
 
 
 signals:
     void clicked(QObject*);
-
-public slots:
-//    void click();
+    void goingAbroad(QVector3D);
+    void collision();
 
 };
 

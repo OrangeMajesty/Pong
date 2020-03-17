@@ -10,6 +10,10 @@ PObject::PObject(QObject *parent) : PConfig(parent)
 
     setVector(QVector3D(0,0,0));
     setSpeed(0);
+
+    collisionEffect = false;
+
+    connect(this, SIGNAL(collision()), this, SLOT(collisionHandler()));
 }
 
 //QVector3D PObject::rotate(QVector3D)
@@ -140,6 +144,10 @@ void PObject::updatePosition()
 
         setVector(vec);
         setPosition((vec*speed)+pos);
+
+        if(pos.x() >= 1.0f || pos.x() <= -1.0f || pos.y() >= 1.0f || pos.y() <= -1.0f)
+            emit goingAbroad(pos);
+
     } else {
         if(pos.x() > 1.0f ) pos.setX(pos.x() - (1.0f - pos.x()) * -1);
         if(pos.x() < -1.0f ) pos.setX(pos.x() - (-1.0f - pos.x()) * -1);
@@ -154,4 +162,20 @@ void PObject::updatePosition()
 QString PObject::getObjectName() const
 {
     return objectName;
+}
+
+void PObject::collisionHandler()
+{
+    qDebug() << "collisionHandler";
+    auto vec = getVector();
+
+    if(vec != QVector3D(0,0,0)) {
+        vec.setX(vec.x() * -1.0f);
+//        vec.setY(vec.y() * -1.0f);
+
+//        qDebug() << "collisionHandler1" << vec;
+        setVector(vec);
+        updatePosition();
+//         qDebug()         << getVector();
+    }
 }

@@ -3,6 +3,8 @@
 PBall::PBall()
 {
 
+    objectName = "Ball";
+
     QVector<GLfloat> sharpe = {
         0.0f, 0.0f, 1.0f, // O
 
@@ -34,6 +36,8 @@ PBall::PBall()
     setFragment(fragment);
 
     setTypePrint(GL_TRIANGLES);
+
+    collisionEffect = true;
 }
 
 //void PBall::updatePosition()

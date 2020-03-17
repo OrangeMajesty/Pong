@@ -12,6 +12,8 @@ public:
 
     void drawTextArray(QPainter*) override;
     void keyUpdate() override;
+
+    void layerReset() override;
 };
 
 #endif // PLAYERMENU_H

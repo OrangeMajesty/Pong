@@ -10,6 +10,9 @@ public:
     PBall();
 
 //    void updatePosition() override;
+
+signals:
+//    void goingAbroad(QVector3D);
 };
 
 #endif // PBALL_H

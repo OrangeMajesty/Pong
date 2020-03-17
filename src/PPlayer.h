@@ -14,6 +14,11 @@ public:
 //    void updatePosition() override;
     unsigned int getScore() const;
 
+    void setScore(unsigned int value);
+
+signals:
+    //    void goingAbroad(QVector3D);
+
 private:
     unsigned int score;
 };

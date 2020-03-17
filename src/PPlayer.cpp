@@ -22,11 +22,18 @@ PPlayer::PPlayer()
     setFragment(fragment);
 
     setTypePrint(GL_TRIANGLES);
+
+    collisionEffect = true;
 }
 
 unsigned int PPlayer::getScore() const
 {
     return score;
+}
+
+void PPlayer::setScore(unsigned int value)
+{
+    score = value;
 }
 
 //void PPlayer::updatePosition()

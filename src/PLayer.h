@@ -11,6 +11,8 @@ class PLayer : public PEvents
 public:
     explicit PLayer(QObject *parent = nullptr);
 
+    void checkCollision();
+
     QVector3D getColorBackground() const;
     void setColorBackground(const QVector3D &value);
 
@@ -19,6 +21,8 @@ public:
 
     virtual void keyUpdate();
     virtual void drawTextArray(QPainter*);
+
+    virtual void layerReset();
 
 private:
     QList<PObject *> elements; // Элементы которые будем отрисовывать на слое

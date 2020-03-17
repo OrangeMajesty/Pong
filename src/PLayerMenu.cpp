@@ -115,3 +115,8 @@ void PLayerMenu::keyUpdate()
         }
     }
 }
+
+void PLayerMenu::layerReset()
+{
+
+}

@@ -38,8 +38,8 @@ PongCore::PongCore()
     }
 
     currentLayoutInit = false;
-    //currentLayout = new PLayerMenu(this);
-    currentLayout = new PLayerScene_1(this);
+    currentLayout = new PLayerMenu(this);
+//    currentLayout = new PLayerScene_1(this);
 
 
 }
@@ -125,7 +125,6 @@ void PongCore::initLayout(PLayer *layer_)
 
 void PongCore::drawElements(QList<PObject*> el)
 {
-
     m_shaderProgram.bind();
     for(auto index = 0; index != el.length(); index++) {
         auto VAO = el.at(index)->getVAO();
@@ -200,6 +199,7 @@ void PongCore::paintGL()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     if(currentLayout && currentLayoutInit) {
+        currentLayout->checkCollision();
         drawElements(currentLayout->getElements());
         currentLayout->drawTextArray(new QPainter(this));
         if(currentLayoutInit)
