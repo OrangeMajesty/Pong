@@ -126,6 +126,7 @@ void PLayerScene_1::layerReset()
 //            auto oldSpeed = el->getSpeed();
             el->setPosition(QVector3D(0,0,0));
 //            el->setSpeed(oldSpeed+0.005);
+
             break;
         }
 

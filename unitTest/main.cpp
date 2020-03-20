@@ -2,7 +2,84 @@
 #include <boost/test/included/unit_test.hpp>
 #include "PLayer.h"
 #include "PObject.h"
+#include <Helper.h>
+#include <PPlayer.h>
 #include <QApplication>
+
+BOOST_AUTO_TEST_CASE(Helper_checkcollision) {
+    PPlayer* PPa = new PPlayer();
+    PPlayer* PPb = new PPlayer();
+
+    PPa->setPosition(QVector3D(0,0,0));
+    PPb->setPosition(QVector3D(0,0,0));
+    BOOST_CHECK(Helper::checkCollision(PPa, PPb) == 1);
+
+    // Change position
+    PPa->setPosition(QVector3D(0.7f,0,0));
+    PPb->setPosition(QVector3D(0,0.5f,0));
+    BOOST_CHECK(Helper::checkCollision(PPa, PPb) == 0);
+
+
+    // Check change type
+    PPa->setTypePrint(GL_QUADS);
+    BOOST_CHECK(Helper::checkCollision(PPa, PPb) == -1);
+
+    PPa->setTypePrint(GL_LINES);
+    BOOST_CHECK(Helper::checkCollision(PPa, PPb) == -1);
+
+    delete PPa;
+    delete PPb;
+}
+
+BOOST_AUTO_TEST_CASE(PConfig_SetAndGetKeysControl) {
+    PConfig fixture;
+
+    QMap<PConfig::key, int> keys;
+    keys[PConfig::key::Up] = Qt::Key::Key_A;
+    keys[PConfig::key::Down] = Qt::Key::Key_H;
+
+    fixture.setKeysControl(keys);
+
+    auto keys_a = fixture.getKeysControl();
+
+    BOOST_CHECK(keys == keys_a);
+}
+
+BOOST_AUTO_TEST_CASE(PEvents_InitAndGetElements) {
+    PEvents fixture;
+
+    auto elements = fixture.getElements();
+
+    BOOST_CHECK(elements.length() == 0);
+}
+
+BOOST_AUTO_TEST_CASE(PEvents_SetAndGetElements) {
+    PEvents fixture;
+
+    QList<PObject *> elements = QList<PObject *>();
+    BOOST_CHECK(elements.length() == 0);
+
+    elements.append(new PObject());
+    BOOST_CHECK(elements.length() == 1);
+
+    fixture.setElements(elements);
+    auto elements_ = fixture.getElements();
+    BOOST_CHECK(elements_.length() == 1);
+}
+
+BOOST_AUTO_TEST_CASE(PEvents_ValueSetAndValueGetElements) {
+    PEvents fixture;
+
+    QList<PObject *> elements = QList<PObject *>();
+    BOOST_CHECK(elements.length() == 0);
+
+    elements.append(new PObject());
+    BOOST_CHECK(elements.length() == 1);
+
+    fixture.setElements(elements);
+    auto elements_ = fixture.getElements();
+    BOOST_CHECK(elements_.length() == 1);
+}
 
 BOOST_AUTO_TEST_CASE(PLayer_InitAndGetColorBackground) {
 
@@ -192,3 +269,20 @@ BOOST_AUTO_TEST_CASE(PObject_ValueSetAndValueGetFragment) {
     BOOST_CHECK(fragment_.first() == 13);
     BOOST_CHECK(fragment_.at(0) == 13);
 }
+
+BOOST_AUTO_TEST_CASE(PPlayer_SetAndGetScore) {
+    PPlayer fixture;
+
+    auto score = fixture.getScore();
+    BOOST_CHECK(score == 0);
+
+    fixture.setScore(11);
+    auto score_1 = fixture.getScore();
+    BOOST_CHECK(score_1 == 11);
+
+    fixture.setScore(-5);
+    auto score_2 = fixture.getScore();
+    BOOST_CHECK(score_2 > 0);
+
+}
+
