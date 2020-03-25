@@ -1,6 +1,9 @@
 #include "PPlayer.h"
 #include <QtOpenGL>
 
+/**
+ * @brief PPlayer::PPlayer
+ */
 PPlayer::PPlayer()
 {
     objectName = "Player";
@@ -21,22 +24,27 @@ PPlayer::PPlayer()
     setShape(sharpe);
     setFragment(fragment);
 
+    setSpeed(0.03);
+
     setTypePrint(GL_TRIANGLES);
 
     collisionEffect = true;
 }
 
+/**
+ * @brief PPlayer::getScore
+ * @return player score
+ */
 unsigned int PPlayer::getScore() const
 {
     return score;
 }
 
+/**
+ * @brief PPlayer::setScore
+ * @param value - player score
+ */
 void PPlayer::setScore(unsigned int value)
 {
     score = value;
 }
-
-//void PPlayer::updatePosition()
-//{
-
-//}

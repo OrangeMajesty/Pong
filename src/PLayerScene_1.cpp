@@ -4,16 +4,17 @@
 #include "PBall.h"
 #include "PObject.h"
 
-#define speed 0.03
-
+/**
+ * @brief PLayerScene_1::PLayerScene_1
+ * @param parent - main object
+ */
 PLayerScene_1::PLayerScene_1(QObject *parent)
 {
-
     QList<PObject*> arr;
 
     // Create game objects
     PObject* lineCenter = new PObject();
-    lineCenter->setSelect(false);
+    lineCenter->setSelected(false);
     lineCenter->setTypePrint(GL_LINES);
 
     QVector<GLfloat> sharpe = {
@@ -28,8 +29,6 @@ PLayerScene_1::PLayerScene_1(QObject *parent)
     PPlayer* player1 = new PPlayer();
     player1->setPosition(QVector3D(-0.95f, 0, 0));
     player1->setColor(QColor(255, 120, 20, 255));
-
-
 
     QMap<PConfig::key, int> keys_p1;
     keys_p1[PConfig::key::Up] = Qt::Key::Key_W;
@@ -55,17 +54,21 @@ PLayerScene_1::PLayerScene_1(QObject *parent)
     ball->setPosition(QVector3D(0,0,0));
     ball->setColor(QColor(255, 120, 20, 255));
     ball->setSpeed(0.06);
-    //ball->setVector(QVector3D((rand() % 2 - 1)*0.1, (rand() % 2 - 1)*0.1, 0));
     ball->setVector(QVector3D(0.1, -0.243853, 0));
-    connect((PObject*)ball, SIGNAL(goingAbroad(QVector3D)), this, SLOT(resetLayer(QVector3D)));
+    connect((PObject*)ball, SIGNAL(goingAbroad(QVector3D)), this, SLOT(winLose(QVector3D)));
     arr.append(ball);
 
     setElements(arr);
 
-    //layerReset();
     setColorBackground(QVector3D(0.2f, 0.3f, 0.3f));
 }
 
+/**
+ * @brief PLayerScene_1::drawTextArray
+ * @details Rendering text using Qt methods
+ * @todo Implement text rendering using OpenGL methods
+ * @param paint - Qt Object
+ */
 void PLayerScene_1::drawTextArray(QPainter* paint)
 {
     auto els = getElements();
@@ -77,11 +80,13 @@ void PLayerScene_1::drawTextArray(QPainter* paint)
         QPointF(15, 20)
     };
 
-
     // Score players
-    for(auto index = 0, i_player = 0; index != els.length(); index++) {
-        if(els.at(index)->getObjectName() == "Player") {
-            if(posScore.length() >= i_player) {
+    for(auto index = 0, i_player = 0; index != els.length(); index++)
+    {
+        if(els.at(index)->getObjectName() == "Player")
+        {
+            if(posScore.length() >= i_player)
+            {
                 paint->drawText(posScore.at(i_player), QString::number(((PPlayer*)els.at(index))->getScore()));
                 i_player++;
             }
@@ -92,20 +97,29 @@ void PLayerScene_1::drawTextArray(QPainter* paint)
     paint->end();
 }
 
-void PLayerScene_1::keyUpdate() {
+/**
+ * @brief PLayerScene_1::keyUpdate
+ */
+void PLayerScene_1::keyUpdate()
+{
     auto elements = getElements();
     auto keys = getKeyPressed();
 
-    for(int index = 0; index != elements.length(); index++) {
+    for(int index = 0; index != elements.length(); index++)
+    {
         auto el = elements.at(index);
 
-        if(typeid(*el).name() == typeid(PPlayer).name()) {
+        if(typeid(*el).name() == typeid(PPlayer).name())
+        {
             auto pos = el->getPosition();
+            auto speed = ((PPlayer*) el)->getSpeed();
 
-            if(keys[((PPlayer*)el)->getKeysControl()[PConfig::key::Up]]) {
+            if(keys[((PPlayer*)el)->getKeysControl()[PConfig::key::Up]])
+            {
                 pos.setY(pos.y() + speed);
             }
-            if(keys[((PPlayer*)el)->getKeysControl()[PConfig::key::Down]]) {
+            if(keys[((PPlayer*)el)->getKeysControl()[PConfig::key::Down]])
+            {
                 pos.setY(pos.y() - speed);
             }
 
@@ -115,17 +129,20 @@ void PLayerScene_1::keyUpdate() {
     }
 }
 
+/**
+ * @brief PLayerScene_1::layerReset
+ */
 void PLayerScene_1::layerReset()
 {
     auto elements = getElements();
 
-    for(int index = 0; index != elements.length(); index++) {
+    for(int index = 0; index != elements.length(); index++)
+    {
         auto el = elements.at(index);
 
-        if("Ball" == el->getObjectName()) {
-//            auto oldSpeed = el->getSpeed();
+        if("Ball" == el->getObjectName())
+        {
             el->setPosition(QVector3D(0,0,0));
-//            el->setSpeed(oldSpeed+0.005);
 
             break;
         }
@@ -136,20 +153,27 @@ void PLayerScene_1::layerReset()
 
 }
 
-void PLayerScene_1::resetLayer(QVector3D a)
+/**
+ * @brief PLayerScene_1::winLose
+ * @details Player win / lose handler
+ * @param a - position ball
+ */
+void PLayerScene_1::winLose(QVector3D a)
 {
     auto elements = getElements();
     int offsetPlayer = 0;
 
-    for(int index = 0; index != elements.length(); index++) {
+    for(int index = 0; index != elements.length(); index++)
+    {
         auto el = elements.at(index);
 
-        if("Player" == el->getObjectName()) {
+        if("Player" == el->getObjectName())
+        {
             if(a.x() >= 1.0f && offsetPlayer == 1)
-                ((PPlayer*)el)->setScore(  ((PPlayer*)el)->getScore() + 1);
+                ((PPlayer*)el)->setScore(((PPlayer*)el)->getScore() + 1);
 
             if(a.x() <= -1.0f && offsetPlayer == 0)
-                ((PPlayer*)el)->setScore(  ((PPlayer*)el)->getScore() + 1);
+                ((PPlayer*)el)->setScore(((PPlayer*)el)->getScore() + 1);
 
             offsetPlayer++;
         }

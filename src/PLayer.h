@@ -5,27 +5,44 @@
 #include "PObject.h"
 #include "PEvents.h"
 
+/**
+ * @brief The PLayer class.
+ *      Used to create a player object.
+ *
+ * @todo Add a method to add an item to a level.
+ */
 class PLayer : public PEvents
 {
     Q_OBJECT
 public:
-    explicit PLayer(QObject *parent = nullptr);
 
+    /// Sets the shape and fragments of an object, as well as settings
+    explicit PLayer(QObject *parent = nullptr) {};
+
+    /// Collision check
     void checkCollision();
 
+    /// Returns the background color
     QVector3D getColorBackground() const;
+
+    /// Sets the background color
     void setColorBackground(const QVector3D &value);
 
+    /// Returns items at level
     QList<PObject *> getElements() const;
+
+    /// Sets the number of items per level
     void setElements(const QList<PObject *> &value);
 
-    virtual void keyUpdate();
-    virtual void drawTextArray(QPainter*);
-
-    virtual void layerReset();
+    virtual void keyUpdate() {};
+    virtual void drawTextArray(QPainter*) {};
+    virtual void layerReset() {};
 
 private:
-    QList<PObject *> elements; // Элементы которые будем отрисовывать на слое
+    /// List of drawable items
+    QList<PObject *> elements;
+
+    /// Current background color
     QVector3D colorBackground;
 
 signals:

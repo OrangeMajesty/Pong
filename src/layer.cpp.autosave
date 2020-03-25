@@ -1,0 +1,6 @@
+#include "layer.h"
+
+layer::layer(QObject *parent) : QObject(parent)
+{
+
+}

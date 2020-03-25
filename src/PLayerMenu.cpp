@@ -3,7 +3,10 @@
 #include <QPainter>
 #include "PLayerScene_1.h"
 
-
+/**
+ * @brief PLayerMenu::PLayerMenu
+ * @param parent - main object
+ */
 PLayerMenu::PLayerMenu(QObject *parent)
 {
     QList<PObject*> arr;
@@ -15,29 +18,14 @@ PLayerMenu::PLayerMenu(QObject *parent)
         -0.25f, 0.1f, 1.0f,
     };
 
-//    QVector<GLfloat> sharpe = {
-//        -0.01f, -0.2f, 1.0f,
-//        0.01f, -0.2f, 1.0f,
-//        0.01f, 0.2f, 1.0f,
-//        -0.01f, 0.2f, 1.0f,
-//    };
-
-//    QVector<GLint> fragment = {
-//        0,1,2,
-//        0,2,3
-//    };
 
     PObject* item1 = new PObject();
     item1->setShape(sharpe);
-//    menu1->setFragment(fragment);
     item1->setTypePrint(GL_LINE_LOOP);
     item1->setPosition(QVector3D(0, 0.2f, 0));
-//    item1->setColor(QColor(150, 120, 20, 255));
-    item1->setSelect(true);
+    item1->setSelected(true);
     arr.append(item1);
-
     connect(item1, SIGNAL(clicked(QObject*)), parent, SLOT(changeLayout(QObject *)));
-
 
 //    PObject* menu2 = new PObject();
 //    menu2->setShape(sharpe);
@@ -52,12 +40,17 @@ PLayerMenu::PLayerMenu(QObject *parent)
     item3->setPosition(QVector3D(0, -0.3f, 0));
     arr.append(item3);
 
-
     setElements(arr);
 
     setColorBackground(QVector3D(0.2f, 0.3f, 0.3f));
 }
 
+/**
+ * @brief PLayerMenu::drawTextArray
+ * @details Rendering text using Qt methods
+ * @todo Implement text rendering using OpenGL methods
+ * @param paint - Qt Object
+ */
 void PLayerMenu::drawTextArray(QPainter* paint)
 {
     paint->setPen(Qt::white);
@@ -76,39 +69,45 @@ void PLayerMenu::drawTextArray(QPainter* paint)
     paint->scale(1.5, 1.5);
     paint->drawText(165, 110, "Start");
 
-//    paint->restore();
-//    paint->scale(1.5, 1.5);
     paint->drawText(165, 175, "Exit");
 
     paint->end();
 }
 
+/**
+ * @brief PLayerMenu::keyUpdate
+ */
 void PLayerMenu::keyUpdate()
 {
     auto elements = getElements();
     auto keys = getKeyPressed();
 
-    for(int index = 0; index != elements.length(); index++) {
+    for(int index = 0; index != elements.length(); index++)
+    {
         auto el = elements.at(index);
-        if(el->getAllowSelect() && el->getSelect()) {
+        if(el->getAllowSelect() && el->getSelected())
+        {
 
-            if(keys[Qt::Key::Key_Up]) {
-                el->setSelect(false);
+            if(keys[Qt::Key::Key_Up])
+            {
+                el->setSelected(false);
                 PObject* selectElement = el;
 
                 if(0 <= index-1)
                     selectElement = elements.at(index-1);
 
-                selectElement->setSelect(true);
-            } else if(keys[Qt::Key::Key_Down]) {
-                el->setSelect(false);
+                selectElement->setSelected(true);
+            } else if(keys[Qt::Key::Key_Down])
+            {
+                el->setSelected(false);
                 PObject* selectElement = el;
 
                 if(elements.length() > index+1)
                     selectElement = elements.at(index+1);
 
-                selectElement->setSelect(true);
-            } else if(keys[Qt::Key::Key_Space]) {
+                selectElement->setSelected(true);
+            } else if(keys[Qt::Key::Key_Space])
+            {
                 emit el->clicked(new PLayerScene_1());
             }
 
@@ -116,7 +115,3 @@ void PLayerMenu::keyUpdate()
     }
 }
 
-void PLayerMenu::layerReset()
-{
-
-}

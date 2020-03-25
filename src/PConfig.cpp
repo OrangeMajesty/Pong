@@ -1,14 +1,18 @@
 #include "PConfig.h"
 
-PConfig::PConfig(QObject *parent) : QObject(parent)
-{
-}
-
+/**
+ * @brief PConfig::getKeysControl
+ * @return array keys
+ */
 QMap<PConfig::key, int> PConfig::getKeysControl() const
 {
     return keysControl;
 }
 
+/**
+ * @brief PConfig::setKeysControl
+ * @param keys
+ */
 void PConfig::setKeysControl(const QMap<key, int> &value)
 {
     keysControl = value;

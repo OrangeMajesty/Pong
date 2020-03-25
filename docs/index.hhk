@@ -1,0 +1,362 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#acf7f86f8a9fdf71f52e521affc715e92"><param name="Name" value="changeLayout"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_helper.html#a21010c416be91f396f74d2e4bd560a09"><param name="Name" value="checkCollision"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_helper.html#a21010c416be91f396f74d2e4bd560a09"><param name="Name" value="Helper"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#a47e9c783a7a171250603959e83e6f77f"><param name="Name" value="checkCollision"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#ae8a02a0285dc830be5052a053d025d26"><param name="Name" value="clicked"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#acf2ac947cf752469c92a57434954b2bd"><param name="Name" value="collision"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a0b3c3207e3f6006d5346a6fce176244f"><param name="Name" value="collisionEffect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#a6116973186c33cd9d4f4984cc3c663d9"><param name="Name" value="drawElements"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#acc5b41883df08e8f3283189e93f6e38c"><param name="Name" value="drawTextArray"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#acc5b41883df08e8f3283189e93f6e38c"><param name="Name" value="PLayer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_menu.html#a288721900a140fbe9f6065b13dc70b4b"><param name="Name" value="drawTextArray"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_menu.html#a288721900a140fbe9f6065b13dc70b4b"><param name="Name" value="PLayerMenu"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html#aa90a136a0e49242f71fe02bd80366a17"><param name="Name" value="drawTextArray"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a3989f23d58aeeca94a626b6db47c62e9"><param name="Name" value="getAllowSelect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#aa96a61e410628ebbb1812ff709b1a98d"><param name="Name" value="getColor"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#a0d19ee1a43015cb72d33ace68397bd74"><param name="Name" value="getColorBackground"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#ad9ea629f816c37d62da30ba5e5f1f095"><param name="Name" value="getElements"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#ad9ea629f816c37d62da30ba5e5f1f095"><param name="Name" value="PEvents"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#ae6200841c6635bc9fc6db738b4656ca0"><param name="Name" value="getElements"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#ac240644bd26dc706e596826c6a8b1f78"><param name="Name" value="getFragment"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#a8125cc746fa83767a2221e1df2617db7"><param name="Name" value="getKeyPressed"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_config.html#ae1b286dad6d5957041b8283536c44c41"><param name="Name" value="getKeysControl"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a66cdff3067172d3dfd02d760d5dbd455"><param name="Name" value="getObjectName"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#ac17aace4a16d746fceb597acdfdbea95"><param name="Name" value="getPosition"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_player.html#ae31ef1c4e7f76b9f483d37c6507e2dd8"><param name="Name" value="getScore"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a01af1a5fd34f28cb28d161913269cdeb"><param name="Name" value="getSelected"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a67a592e9850ccb1970fa3fe26a102fdb"><param name="Name" value="getShape"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a092a5bced87d09fec9c737557f93f783"><param name="Name" value="getSpeed"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#aca29e554bad86bbcf1d5bd38b9b74fc4"><param name="Name" value="getTypePrint"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#aea0fe45e8d38dbaf63a821e72ede235b"><param name="Name" value="getVAO"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#aba379cec5c8f7b400a857c3bce133ee9"><param name="Name" value="getVector"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a96fcbe87807dbf307d3125b4ebda079a"><param name="Name" value="goingAbroad"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_helper.html"><param name="Name" value="Helper"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_helper.html"><param name="Name" value="Helper"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_helper.html#a21010c416be91f396f74d2e4bd560a09"><param name="Name" value="checkCollision"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_helper.html#ae4c1f083b865a6229a351afdcf1bfa73"><param name="Name" value="Helper"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#a0479dbca230e2228d0cf004159d3998c"><param name="Name" value="initializeGL"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#a5d20495a14588f7fb086f0f992055e2d"><param name="Name" value="initLayout"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#a6061fc1a6940baee2eb20d46ff78ce70"><param name="Name" value="keyPress"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#ac71c2968df2c506aa2375bff8bf47d9c"><param name="Name" value="keyPressEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#a70e12523fe0f19c247d0c7b87dbcec4e"><param name="Name" value="keyRelease"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#a2b06c10dfd9f888cc530e22d9e1efb82"><param name="Name" value="keyReleaseEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#aff348864fb4f87397e7613251445dc6e"><param name="Name" value="keyUpdate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#aff348864fb4f87397e7613251445dc6e"><param name="Name" value="PEvents"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#ab95e1779a1c4266e9c94a3b854a0e256"><param name="Name" value="keyUpdate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#ab95e1779a1c4266e9c94a3b854a0e256"><param name="Name" value="PLayer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_menu.html#a703fdc1853dc2d8faa0c9afe46d76088"><param name="Name" value="keyUpdate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_menu.html#a703fdc1853dc2d8faa0c9afe46d76088"><param name="Name" value="PLayerMenu"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html#a5f971f4f542e8d3ddfc99c1f1417f9b3"><param name="Name" value="keyUpdate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#af752f1e92c3584679e8424cf79059453"><param name="Name" value="layerReset"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#af752f1e92c3584679e8424cf79059453"><param name="Name" value="PLayer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html#a399b68ced1ad98469b1b63e1172a19b5"><param name="Name" value="layerReset"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a28b3f995b0d0255cab3b0e10dbbd91d5"><param name="Name" value="objectName"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#ae0dd92c6bad8a14f1ec8f479ba4c8bc5"><param name="Name" value="paintEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#ae33ff3774f19fb2b4f3cfdbd78b72df9"><param name="Name" value="paintGL"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_ball.html"><param name="Name" value="PBall"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_ball.html#ae49bab15db36db604e22eb0436d49b4d"><param name="Name" value="PBall"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_config.html"><param name="Name" value="PConfig"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_config.html"><param name="Name" value="PConfig"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_config.html#ae1b286dad6d5957041b8283536c44c41"><param name="Name" value="getKeysControl"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_config.html"><param name="Name" value="PConfig"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_config.html#add85cfaa8854131733925493118407cd"><param name="Name" value="PConfig"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_config.html#a42a0ee13dd784b43feda5413d0daba9b"><param name="Name" value="PConfig"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html"><param name="Name" value="PEvents"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html"><param name="Name" value="PEvents"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#ad9ea629f816c37d62da30ba5e5f1f095"><param name="Name" value="getElements"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html"><param name="Name" value="PEvents"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#a8125cc746fa83767a2221e1df2617db7"><param name="Name" value="getKeyPressed"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html"><param name="Name" value="PEvents"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#a6061fc1a6940baee2eb20d46ff78ce70"><param name="Name" value="keyPress"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html"><param name="Name" value="PEvents"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#a70e12523fe0f19c247d0c7b87dbcec4e"><param name="Name" value="keyRelease"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html"><param name="Name" value="PEvents"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#aff348864fb4f87397e7613251445dc6e"><param name="Name" value="keyUpdate"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html"><param name="Name" value="PEvents"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#a0847b9bd09cd083f36e67f81e913bfc1"><param name="Name" value="PEvents"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#a126a4bc1c942b68fd5849cabb5efa2f0"><param name="Name" value="PEvents"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html"><param name="Name" value="PLayer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html"><param name="Name" value="PLayer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#a47e9c783a7a171250603959e83e6f77f"><param name="Name" value="checkCollision"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html"><param name="Name" value="PLayer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#acc5b41883df08e8f3283189e93f6e38c"><param name="Name" value="drawTextArray"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html"><param name="Name" value="PLayer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#a0d19ee1a43015cb72d33ace68397bd74"><param name="Name" value="getColorBackground"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html"><param name="Name" value="PLayer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#ae6200841c6635bc9fc6db738b4656ca0"><param name="Name" value="getElements"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html"><param name="Name" value="PLayer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#ab95e1779a1c4266e9c94a3b854a0e256"><param name="Name" value="keyUpdate"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html"><param name="Name" value="PLayer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#af752f1e92c3584679e8424cf79059453"><param name="Name" value="layerReset"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html"><param name="Name" value="PLayer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#aa224bf84296931fa748fd2039fa7592a"><param name="Name" value="PLayer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html"><param name="Name" value="PLayer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#a694fb2b9adce014f1974a5af8f416027"><param name="Name" value="setColorBackground"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#a1049e1170310068a88b56af329ca1db7"><param name="Name" value="PLayer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_menu.html"><param name="Name" value="PLayerMenu"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_menu.html"><param name="Name" value="PLayerMenu"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_menu.html#a288721900a140fbe9f6065b13dc70b4b"><param name="Name" value="drawTextArray"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_menu.html"><param name="Name" value="PLayerMenu"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_menu.html#a703fdc1853dc2d8faa0c9afe46d76088"><param name="Name" value="keyUpdate"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_menu.html#a3f2f361fdc53c25bb7f5c77130bc49b0"><param name="Name" value="PLayerMenu"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html"><param name="Name" value="PLayerScene_1"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html"><param name="Name" value="PLayerScene_1"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html#aa90a136a0e49242f71fe02bd80366a17"><param name="Name" value="drawTextArray"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html"><param name="Name" value="PLayerScene_1"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html#a5f971f4f542e8d3ddfc99c1f1417f9b3"><param name="Name" value="keyUpdate"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html"><param name="Name" value="PLayerScene_1"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html#a399b68ced1ad98469b1b63e1172a19b5"><param name="Name" value="layerReset"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html"><param name="Name" value="PLayerScene_1"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html#ace5685ab9350b2c65a38d31b76c68757"><param name="Name" value="PLayerScene_1"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html#a612ebb57c97ca44fe47ada83e9719af8"><param name="Name" value="PLayerScene_1"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#ae8a02a0285dc830be5052a053d025d26"><param name="Name" value="clicked"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#acf2ac947cf752469c92a57434954b2bd"><param name="Name" value="collision"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a0b3c3207e3f6006d5346a6fce176244f"><param name="Name" value="collisionEffect"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a3989f23d58aeeca94a626b6db47c62e9"><param name="Name" value="getAllowSelect"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#aa96a61e410628ebbb1812ff709b1a98d"><param name="Name" value="getColor"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#ac240644bd26dc706e596826c6a8b1f78"><param name="Name" value="getFragment"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a66cdff3067172d3dfd02d760d5dbd455"><param name="Name" value="getObjectName"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#ac17aace4a16d746fceb597acdfdbea95"><param name="Name" value="getPosition"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a01af1a5fd34f28cb28d161913269cdeb"><param name="Name" value="getSelected"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a67a592e9850ccb1970fa3fe26a102fdb"><param name="Name" value="getShape"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a092a5bced87d09fec9c737557f93f783"><param name="Name" value="getSpeed"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#aca29e554bad86bbcf1d5bd38b9b74fc4"><param name="Name" value="getTypePrint"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#aea0fe45e8d38dbaf63a821e72ede235b"><param name="Name" value="getVAO"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#aba379cec5c8f7b400a857c3bce133ee9"><param name="Name" value="getVector"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a96fcbe87807dbf307d3125b4ebda079a"><param name="Name" value="goingAbroad"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a28b3f995b0d0255cab3b0e10dbbd91d5"><param name="Name" value="objectName"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#adae372c77715f2f1aed3de5f247ba72e"><param name="Name" value="PObject"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a8696100c3e0a1e491486794a698a960c"><param name="Name" value="setAllowSelect"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a88d979e3653c08a12870a115b04a3017"><param name="Name" value="setColor"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#ad91c9cba09348a28317d0451857bf47a"><param name="Name" value="setFragment"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a31f9c5d4474363d078f601d2692ed697"><param name="Name" value="setPosition"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a322c13175dc4c5b77ece34ff21992ae7"><param name="Name" value="setSelected"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a358b19e6979bd1ebce03c03ea6b8ed25"><param name="Name" value="setShape"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a6a46ffbfedbf8357d52d28d541893d00"><param name="Name" value="setSpeed"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#ad8ad2f8f785e9b958b533b240c51e067"><param name="Name" value="setTypePrint"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#abc816821de9c6c6c3b9bd285e1cc5ca0"><param name="Name" value="setVAO"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html"><param name="Name" value="PObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#abcce35352edad1a9853d594f97a235fe"><param name="Name" value="setVector"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#ad2bc98aa7cbcb61e52580cb4182e6e91"><param name="Name" value="PObject"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html"><param name="Name" value="PongCore"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html"><param name="Name" value="PongCore"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#acf7f86f8a9fdf71f52e521affc715e92"><param name="Name" value="changeLayout"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html"><param name="Name" value="PongCore"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#a6116973186c33cd9d4f4984cc3c663d9"><param name="Name" value="drawElements"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html"><param name="Name" value="PongCore"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#a0479dbca230e2228d0cf004159d3998c"><param name="Name" value="initializeGL"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html"><param name="Name" value="PongCore"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#a5d20495a14588f7fb086f0f992055e2d"><param name="Name" value="initLayout"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html"><param name="Name" value="PongCore"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#ac71c2968df2c506aa2375bff8bf47d9c"><param name="Name" value="keyPressEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html"><param name="Name" value="PongCore"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#a2b06c10dfd9f888cc530e22d9e1efb82"><param name="Name" value="keyReleaseEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html"><param name="Name" value="PongCore"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#ae0dd92c6bad8a14f1ec8f479ba4c8bc5"><param name="Name" value="paintEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html"><param name="Name" value="PongCore"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#ae33ff3774f19fb2b4f3cfdbd78b72df9"><param name="Name" value="paintGL"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html"><param name="Name" value="PongCore"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#a54655d62a15fbbd8571c28cc315c75ee"><param name="Name" value="PongCore"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#af3531002c2f7a5a78fa24ddf600a7f08"><param name="Name" value="PongCore"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_player.html"><param name="Name" value="PPlayer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_player.html"><param name="Name" value="PPlayer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_player.html#ae31ef1c4e7f76b9f483d37c6507e2dd8"><param name="Name" value="getScore"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_player.html"><param name="Name" value="PPlayer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_player.html#a518a90748279f8ec88732315a51ae057"><param name="Name" value="PPlayer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_player.html#ad1d51706c7025c14a7fb30a758e76f6f"><param name="Name" value="PPlayer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pong_core.html#af3531002c2f7a5a78fa24ddf600a7f08"><param name="Name" value="resizeEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a8696100c3e0a1e491486794a698a960c"><param name="Name" value="setAllowSelect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a88d979e3653c08a12870a115b04a3017"><param name="Name" value="setColor"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#a694fb2b9adce014f1974a5af8f416027"><param name="Name" value="setColorBackground"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#a126a4bc1c942b68fd5849cabb5efa2f0"><param name="Name" value="setElements"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_events.html#a126a4bc1c942b68fd5849cabb5efa2f0"><param name="Name" value="PEvents"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer.html#a1049e1170310068a88b56af329ca1db7"><param name="Name" value="setElements"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#ad91c9cba09348a28317d0451857bf47a"><param name="Name" value="setFragment"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_config.html#a42a0ee13dd784b43feda5413d0daba9b"><param name="Name" value="setKeysControl"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a31f9c5d4474363d078f601d2692ed697"><param name="Name" value="setPosition"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_player.html#ad1d51706c7025c14a7fb30a758e76f6f"><param name="Name" value="setScore"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a322c13175dc4c5b77ece34ff21992ae7"><param name="Name" value="setSelected"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a358b19e6979bd1ebce03c03ea6b8ed25"><param name="Name" value="setShape"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#a6a46ffbfedbf8357d52d28d541893d00"><param name="Name" value="setSpeed"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#ad8ad2f8f785e9b958b533b240c51e067"><param name="Name" value="setTypePrint"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#abc816821de9c6c6c3b9bd285e1cc5ca0"><param name="Name" value="setVAO"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#abcce35352edad1a9853d594f97a235fe"><param name="Name" value="setVector"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="todo.html"><param name="Name" value="Todo List"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_object.html#ad2bc98aa7cbcb61e52580cb4182e6e91"><param name="Name" value="updatePosition"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_layer_scene__1.html#a612ebb57c97ca44fe47ada83e9719af8"><param name="Name" value="winLose"></OBJECT>
+</UL>
+</BODY>
+</HTML>
