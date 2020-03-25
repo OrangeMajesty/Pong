@@ -30,3 +30,16 @@
 *.exe
 *.out
 *.app
+
+# Other files
+/Makefile
+
+# Release and Debug files
+app/debug/*
+app/release/*
+
+src/debug/*
+src/release/*
+
+unitTest/debug/*
+unitTest/release/*
