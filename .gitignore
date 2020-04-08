@@ -32,7 +32,11 @@
 *.app
 
 # Other files
-/Makefile
+.qmake.stash
+*.pro.user
+
+# Build files
+**/Makefile*
 
 # Release and Debug files
 app/debug/*

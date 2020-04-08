@@ -40,6 +40,7 @@ SOURCES += \
     PConfig.cpp \
     PLayer.cpp \
     PLayerMenu.cpp \
+    PLayerMenu_Settings.cpp \
     PLayerScene_1.cpp \
     PObject.cpp \
     PPlayer.cpp \
@@ -52,6 +53,7 @@ HEADERS += \
     PConfig.h \
     PLayer.h \
     PLayerMenu.h \
+    PLayerMenu_Settings.h \
     PLayerScene_1.h \
     PObject.h \
     PPlayer.h \

@@ -14,7 +14,7 @@ class Helper : public QObject
 {
     Q_OBJECT
 public:
-    explicit Helper(QObject *parent = nullptr) {};
+    explicit Helper(QObject *parent = nullptr) : QObject(parent) {};
 
     /// Statistical method for checking collision of an PObject
     static int checkCollision(PObject*,PObject*);

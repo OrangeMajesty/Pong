@@ -148,8 +148,6 @@ void PongCore::initializeGL()
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(requestUpdate()));
     timer->start(10);
-    timer->start();
-
 }
 
 /**

@@ -17,7 +17,7 @@ class PLayer : public PEvents
 public:
 
     /// Sets the shape and fragments of an object, as well as settings
-    explicit PLayer(QObject *parent = nullptr) {};
+    explicit PLayer(QObject *parent = nullptr) : PEvents(parent) {};
 
     /// Collision check
     void checkCollision();

@@ -15,7 +15,7 @@ class PConfig : public QObject
 {
     Q_OBJECT
 public:
-    explicit PConfig(QObject *parent = nullptr) {};
+    explicit PConfig(QObject *parent = nullptr) : QObject(parent) {};
 
     /// Available control keys
     enum key {

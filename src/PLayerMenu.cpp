@@ -27,12 +27,11 @@ PLayerMenu::PLayerMenu(QObject *parent)
     arr.append(item1);
     connect(item1, SIGNAL(clicked(QObject*)), parent, SLOT(changeLayout(QObject *)));
 
-//    PObject* menu2 = new PObject();
-//    menu2->setShape(sharpe);
-//    menu2->setFragment(fragment);
-//    menu2->setTypePrint(GL_LINE_LOOP);
-//    menu2->setPosition(QVector3D(0, -0.05f, 0));
-//    arr.append(menu2);
+    PObject* menu2 = new PObject();
+    menu2->setShape(sharpe);
+    menu2->setTypePrint(GL_LINE_LOOP);
+    menu2->setPosition(QVector3D(0, -0.05f, 0));
+    arr.append(menu2);
 
     PObject* item3 = new PObject();
     item3->setShape(sharpe);
@@ -68,6 +67,8 @@ void PLayerMenu::drawTextArray(QPainter* paint)
     paint->restore();
     paint->scale(1.5, 1.5);
     paint->drawText(165, 110, "Start");
+
+    paint->drawText(155, 145, "Settings");
 
     paint->drawText(165, 175, "Exit");
 

@@ -12,7 +12,7 @@ class PEvents : public QObject
 {
     Q_OBJECT
 public:
-    explicit PEvents(QObject *parent = nullptr) {};
+    explicit PEvents(QObject *parent = nullptr) : QObject(parent) {};
 
     /// Unused
     virtual void keyUpdate() {};
