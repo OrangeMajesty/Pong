@@ -4,3 +4,13 @@ This ***C ++*** game is being developed to provide a visual representation of gr
 The Opengl specification and the QT framework are used.
 
 <!-- @version: 0.1-Alpha -->
+
+<!-- @progress: any text [+] -->
+<!-- @progress: any text [-] -->
+<!-- @progress: any text [-] -->
+<!-- @progress: any text [-] -->
+<!-- @progress: any text [-] -->
+<!-- @progress: any text [+] -->
+<!-- @progress: any text [+] -->
+<!-- @progress: any text [-] -->
+<!-- @progress: any text [+] -->
